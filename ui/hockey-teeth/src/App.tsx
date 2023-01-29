@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './assets/logo.png';
+import instagram from './assets/instagram.svg'
 import './App.css';
 
 function App() {
@@ -9,9 +10,10 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <div className="social">
-        <p>
-          Website coming soon!
-        </p>
+        <a href={"https://www.instagram.com/hockeyteethband/"}>
+          <img src={instagram} alt="instagram" />
+          Visit our Instagram
+        </a>
       </div>
     </div>
   );
