@@ -19,16 +19,12 @@
   color: black;
 }
 
+.show-item a {
+  margin-top: -5em;
+}
+
 a {
   color: black;
-  text-decoration: none;
-}
-
-a.hover {
-  text-decoration: underline;
-}
-
-a.active {
   text-decoration: underline;
 }
 

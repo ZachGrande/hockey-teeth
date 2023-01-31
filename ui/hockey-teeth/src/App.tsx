@@ -9,6 +9,14 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
+      <h1>Upcoming Shows</h1>
+      <div className="show-item">
+        <h4>Feb 5, 2023 | Factory Luxe</h4>
+        <a href="https://www.thefactoryluxe.com/events/hockey-teeth-i90-fiasco-choly?fbclid=PAAaZVlXVZ-pjc-N1vANQXYW
+                 7J2uZ5_kHd-ez2jwshJBpT_NvCLNsSnaKyIyE" target="_blank" rel="noreferrer">Tickets</a>
+      </div>
+      <br />
+      <br />
       <SocialLinks />
     </div>
   );
