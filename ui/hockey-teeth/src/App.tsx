@@ -21,6 +21,9 @@ function App() {
         <h4>Feb 24, 2023 | The Blue Room</h4>
         <p>Bellingham, WA</p>
       </div>
+      <h3><a href="https://gmail.us5.list-manage.com/subscribe?u=4a374bb0ae22afdfc30d38dce&id=0163152dc3"
+             target="_blank"
+             rel="noreferrer">Join our mailing list!</a></h3>
       <br />
       <SocialLinks />
     </div>
