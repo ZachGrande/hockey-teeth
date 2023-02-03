@@ -1,25 +1,18 @@
 import React from 'react';
-import logo from './assets/logo.png';
 import './App.css';
-import SocialLinks from "./components/SocialLinks";
 import {ThemeProvider} from "@mui/material";
 import theme from './theme/Theme';
-import Shows from "./pages/Shows";
-import MailingList from "./components/MailingList";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import SiteRouter from "./routers/SiteRouter";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-        <Shows />
-        <MailingList />
-        <br />
-        <br />
-        <SocialLinks />
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/*" element={<SiteRouter />} />
+        </Routes>
+      </Router>
     </ThemeProvider>
   );
 }
