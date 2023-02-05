@@ -9,9 +9,11 @@ const theme = createTheme({
       main: "#C1EFF7"
     },
     text: {
-      primary: "#FFFFFF"
+      primary: "#97F1C3",
+      secondary: "#8C1A6A",
     }
   },
+  spacing: 4,
   typography: {
     fontSize: 12,
     fontFamily: ['Playfair-Display', 'serif'].join(','),
@@ -23,7 +25,8 @@ const theme = createTheme({
       fontFamily: ['Mansalva', 'serif'].join(',')
     },
     h3: {
-      fontFamily: ['Mansalva', 'serif'].join(',')
+      fontFamily: ['Mansalva', 'serif'].join(','),
+      fontSize: 30
     }
   }
 })

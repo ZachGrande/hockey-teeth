@@ -3,6 +3,7 @@ import MailingList from "../components/MailingList";
 import SocialLinks from "../components/SocialLinks";
 import React from "react";
 import {Outlet} from "react-router-dom";
+import MenuBar from "../components/MenuBar";
 
 function HomeLayout() {
   return (
@@ -10,6 +11,7 @@ function HomeLayout() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
+      <MenuBar />
       <Outlet />
       <MailingList />
       <br />
