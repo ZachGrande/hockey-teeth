@@ -128,7 +128,7 @@ export const shows = [
   {
     date: "Mar 29, 2022",
     venue: "Clock-Out Lounge",
-    location: "Bellingham, WA",
+    location: "Seattle, WA",
     link: "",
     linkIncluded: false
   },
@@ -163,7 +163,7 @@ export const shows = [
   {
     date: "Nov 7, 2021",
     venue: "Clock-Out Lounge",
-    location: "Bellingham, WA",
+    location: "Seattle, WA",
     link: "",
     linkIncluded: false
   },
