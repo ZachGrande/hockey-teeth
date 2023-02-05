@@ -1,13 +1,17 @@
 import React from "react";
-import ShowList from "../components/ShowList";
+import ShowList from "../components/ShowList/ShowList";
 import {Typography} from "@mui/material";
 
-function Shows() {
+interface IShowsProps {
+  title: string;
+  data: object;
+}
+function Shows({ title, data }: IShowsProps) {
   return (
     <div>
-      <Typography variant="h1">Upcoming Shows</Typography>
+      <Typography variant="h1">{title}</Typography>
       <br />
-      <ShowList />
+      <ShowList shows={data} />
       <br />
     </div>
   );

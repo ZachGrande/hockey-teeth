@@ -31,6 +31,17 @@ function MenuBar() {
           Videos
         </Link>
       </Grid>
+      <Grid item xs={6}>
+        <Link to="/past-shows"
+              variant="h3"
+              underline={"none"}
+              component={RouterLink}
+              color={location.pathname === "/past-shows" ?
+                theme.palette.text.primary :
+                theme.palette.text.secondary}>
+          Past Shows
+        </Link>
+      </Grid>
     </Grid>
   );
 }

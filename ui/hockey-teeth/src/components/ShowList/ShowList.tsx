@@ -1,11 +1,15 @@
 import React from "react";
 import {Link, Typography} from "@mui/material";
-import {shows} from '../data/Shows';
+import {ShowType} from "./ShowList.types";
 
-function ShowList() {
+interface IShowListProps {
+  shows: any;
+}
+
+function ShowList({ shows }: IShowListProps) {
   return (
     <div className="show-list">
-      {shows.map((data, key) => {
+      {shows.map((data: ShowType["data"], key: ShowType["key"]) => {
         const subHeader = data.linkIncluded ?
           <Typography variant="body1">{data.location + " | "}
             <Link variant="body1" color="inherit" href={data.link} target="_blank" rel="noreferrer">Tickets</Link>
