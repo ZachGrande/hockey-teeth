@@ -1,10 +1,10 @@
 import {Typography} from "@mui/material";
 import React from "react";
 
-function MusicVideos() {
+function Videos() {
   return (
     <>
-      <Typography variant="h1">Music Videos</Typography>
+      <Typography variant="h1">Videos</Typography>
       <div
         style={{
           position: 'relative',
@@ -29,4 +29,4 @@ function MusicVideos() {
   );
 }
 
-export default MusicVideos;
+export default Videos;
