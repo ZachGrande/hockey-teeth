@@ -5,65 +5,47 @@ import {useLocation, Link as RouterLink} from "react-router-dom";
 function MenuBar() {
   const theme = useTheme();
   const location = useLocation();
+  const menu = [
+    {
+      title: "Home",
+      route: "/home"
+    },
+    {
+      title: "Videos",
+      route: "/videos"
+    },
+    {
+      title: "Past Shows",
+      route: "/past-shows"
+    },
+    {
+      title: "In The News",
+      route: "/news"
+    },
+    {
+      title: "Bio",
+      route: "/bio"
+    },
+  ];
 
   return (
     <Grid container rowSpacing={1} justifyContent="center" columns={{ xs: 4, sm: 8, md: 12}}
     sx={{marginBottom: theme.spacing(2)}}>
-      <Grid item xs={6}>
-        <Link to="/home"
-              variant="h3"
-              underline={"none"}
-              component={RouterLink}
-              color={location.pathname === "/home" ?
-                                  theme.palette.text.primary :
-                                  theme.palette.text.secondary}>
-          Home
-        </Link>
-      </Grid>
-      <Grid item xs={6}>
-        <Link to="/videos"
-              variant="h3"
-              underline={"none"}
-              component={RouterLink}
-              color={location.pathname === "/videos" ?
-                theme.palette.text.primary :
-                theme.palette.text.secondary}>
-          Videos
-        </Link>
-      </Grid>
-      <Grid item xs={6}>
-        <Link to="/past-shows"
-              variant="h3"
-              underline={"none"}
-              component={RouterLink}
-              color={location.pathname === "/past-shows" ?
-                theme.palette.text.primary :
-                theme.palette.text.secondary}>
-          Past Shows
-        </Link>
-      </Grid>
-      <Grid item xs={6}>
-        <Link to="/news"
-              variant="h3"
-              underline={"none"}
-              component={RouterLink}
-              color={location.pathname === "/news" ?
-                theme.palette.text.primary :
-                theme.palette.text.secondary}>
-          In The News
-        </Link>
-      </Grid>
-      <Grid item xs={6}>
-        <Link to="/bio"
-              variant="h3"
-              underline={"none"}
-              component={RouterLink}
-              color={location.pathname === "/bio" ?
-                theme.palette.text.primary :
-                theme.palette.text.secondary}>
-          Bio
-        </Link>
-      </Grid>
+      {menu.map((data, key) => {
+        return (
+          <Grid item xs={6} key={key}>
+            <Link to={data.route}
+                  variant="h3"
+                  underline={"none"}
+                  component={RouterLink}
+                  color={location.pathname === data.route ?
+                    theme.palette.text.primary :
+                    theme.palette.text.secondary}>
+              {data.title}
+            </Link>
+          </Grid>
+        );
+      })}
     </Grid>
   );
 }
