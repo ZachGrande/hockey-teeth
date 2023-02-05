@@ -19,7 +19,7 @@ const theme = createTheme({
     fontFamily: ['Playfair-Display', 'serif'].join(','),
     h1: {
       fontFamily: ['Mansalva', 'serif'].join(','),
-      fontSize: 60
+      fontSize: 50
     },
     h2: {
       fontFamily: ['Mansalva', 'serif'].join(',')
@@ -27,6 +27,10 @@ const theme = createTheme({
     h3: {
       fontFamily: ['Mansalva', 'serif'].join(','),
       fontSize: 30
+    },
+    h4: {
+      fontFamily: ['Playfair-Display', 'serif'].join(','),
+      fontSize: 20
     }
   }
 })
