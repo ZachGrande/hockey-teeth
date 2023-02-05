@@ -6,6 +6,25 @@ import {Stack} from "@mui/material";
 import React from "react";
 
 function SocialLinks() {
+  const social = [
+    {
+      image: instagram,
+      link: "https://www.instagram.com/hockeyteethband/"
+    },
+    {
+      image: spotify,
+      link: "https://open.spotify.com/artist/2Flj4MtGAxNIW1Ahutwa37?si=Rzc-IdzeQvGLkFKLytPU_Q/"
+    },
+    {
+      image: apple,
+      link: "https://music.apple.com/us/artist/hockey-teeth/1529979055"
+    },
+    {
+      image: bandcamp,
+      link: "https://hockeyteeth1.bandcamp.com/"
+    }
+  ]
+
   return (
     <Stack className="social" direction="row" spacing={2}
            sx={{
@@ -14,26 +33,16 @@ function SocialLinks() {
              alignItems: "center"
            }}
     >
-      <a href={"https://www.instagram.com/hockeyteethband/"}
-         target="_blank"
-         rel="noreferrer">
-        <img src={instagram} alt="instagram" />
-      </a>
-      <a href={"https://open.spotify.com/artist/2Flj4MtGAxNIW1Ahutwa37?si=Rzc-IdzeQvGLkFKLytPU_Q/"}
-         target="_blank"
-         rel="noreferrer">
-        <img src={spotify} alt="spotify" />
-      </a>
-      <a href={"https://music.apple.com/us/artist/hockey-teeth/1529979055"}
-         target="_blank"
-         rel="noreferrer">
-        <img src={apple} alt="apple-music" />
-      </a>
-      <a href={"https://hockeyteeth1.bandcamp.com/"}
-         target="_blank"
-         rel="noreferrer">
-        <img src={bandcamp} alt="band-camp" />
-      </a>
+      {social.map((data, key) => {
+        return (
+          <a href={data.link}
+             target="_blank"
+             rel="noreferrer"
+             key={key}>
+            <img src={data.image} alt="instagram" />
+          </a>
+        );
+      })}
     </Stack>
   );
 }
