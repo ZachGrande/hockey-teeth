@@ -53,6 +53,17 @@ function MenuBar() {
           In The News
         </Link>
       </Grid>
+      <Grid item xs={6}>
+        <Link to="/bio"
+              variant="h3"
+              underline={"none"}
+              component={RouterLink}
+              color={location.pathname === "/bio" ?
+                theme.palette.text.primary :
+                theme.palette.text.secondary}>
+          Bio
+        </Link>
+      </Grid>
     </Grid>
   );
 }
