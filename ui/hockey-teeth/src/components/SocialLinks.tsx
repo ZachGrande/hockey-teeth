@@ -2,6 +2,8 @@ import instagram from "../assets/instagram.svg";
 import spotify from "../assets/spotify.svg";
 import apple from "../assets/apple-music.svg";
 import bandcamp from "../assets/bandcamp.svg";
+import paypal from '../assets/paypal.svg';
+import venmo from '../assets/venmo.svg';
 import {Stack} from "@mui/material";
 import React from "react";
 
@@ -22,6 +24,14 @@ function SocialLinks() {
     {
       image: bandcamp,
       link: "https://hockeyteeth1.bandcamp.com/"
+    },
+    {
+      image: paypal,
+      link: "https://www.paypal.com/paypalme/hockeyteeth"
+    },
+    {
+      image: venmo,
+      link: "https://account.venmo.com/u/hockey-teeth-merch"
     }
   ]
 
