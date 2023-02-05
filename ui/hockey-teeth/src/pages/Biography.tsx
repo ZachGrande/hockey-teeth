@@ -1,7 +1,7 @@
 import React from "react";
 import {Link, Typography} from "@mui/material";
 import {biography} from "../data/Biography";
-import bamf from "../assets/bamf.jpeg";
+import bamf from "../assets/bamf.png";
 
 function Biography() {
   return (
