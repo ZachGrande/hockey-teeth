@@ -42,6 +42,17 @@ function MenuBar() {
           Past Shows
         </Link>
       </Grid>
+      <Grid item xs={6}>
+        <Link to="/news"
+              variant="h3"
+              underline={"none"}
+              component={RouterLink}
+              color={location.pathname === "/news" ?
+                theme.palette.text.primary :
+                theme.palette.text.secondary}>
+          In The News
+        </Link>
+      </Grid>
     </Grid>
   );
 }
