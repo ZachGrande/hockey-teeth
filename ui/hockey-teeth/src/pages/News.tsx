@@ -7,20 +7,17 @@ function News() {
     <div>
       <Typography variant="h1">In The News</Typography>
       <br />
-      <div className="show-list">
-        {articles.map((data, key) => {
-          return (
-            <div key={key}>
-              <div className="show-item">
-                <Link variant="h4" color="inherit" href={data.link} target="_blank" rel="noreferrer">{data.title}</Link>
-                <Typography variant="body1">{data.author}</Typography>
-              </div>
-              <br />
+      {articles.map((data, key) => {
+        return (
+          <div key={key}>
+            <div className="show-item">
+              <Link variant="h4" color="inherit" href={data.link} target="_blank" rel="noreferrer">{data.title}</Link>
+              <Typography variant="body1">{data.author}</Typography>
             </div>
-          );
-        })}
-      </div>
-      <br />
+            <br />
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -12,7 +12,6 @@ function Shows({ title, data }: IShowsProps) {
       <Typography variant="h1">{title}</Typography>
       <br />
       <ShowList shows={data} />
-      <br />
     </div>
   );
 }

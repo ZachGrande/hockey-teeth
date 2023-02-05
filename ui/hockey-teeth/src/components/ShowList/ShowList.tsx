@@ -8,7 +8,7 @@ interface IShowListProps {
 
 function ShowList({ shows }: IShowListProps) {
   return (
-    <div className="show-list">
+    <div>
       {shows.map((data: ShowType["data"], key: ShowType["key"]) => {
         const subHeader = data.linkIncluded ?
           <Typography variant="body1">{data.location + " | "}
