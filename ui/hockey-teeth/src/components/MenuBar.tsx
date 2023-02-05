@@ -26,6 +26,10 @@ function MenuBar() {
       title: "Bio",
       route: "/bio"
     },
+    {
+      title: "Music",
+      route: "/music"
+    },
   ];
 
   return (
