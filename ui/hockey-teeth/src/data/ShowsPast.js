@@ -1,5 +1,12 @@
 export const shows = [
   {
+    date: "Feb 5, 2023",
+    venue: "Factory Luxe",
+    location: "Seattle, WA",
+    link: "",
+    linkIncluded: false
+  },
+  {
     date: "Jan 29, 2023",
     venue: "The Rabbit Box",
     location: "Seattle, WA",
