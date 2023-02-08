@@ -1,6 +1,5 @@
 import logo from "../assets/logo.png";
-import MailingList from "../components/MailingList";
-import SocialLinks from "../components/SocialLinks";
+import Footer from "../components/Footer";
 import React from "react";
 import {Outlet} from "react-router-dom";
 import MenuBar from "../components/MenuBar";
@@ -15,10 +14,7 @@ function HomeLayout() {
       <Container maxWidth="md">
         <MenuBar />
         <Outlet />
-        <MailingList />
-        <br />
-        <br />
-        <SocialLinks />
+        <Footer />
       </Container>
     </div>
   );
