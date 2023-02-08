@@ -111,6 +111,18 @@ function Biography() {
           </ImageListItem>
         ))}
       </ImageList>
+      <Typography variant="h3">
+        Contact Info
+      </Typography>
+      <Typography variant="body1" sx={{ margin: 5 }}>
+        For booking requests, please email us at
+        <br />
+        <Link variant="body1" color="inherit" href="mailto: hockeyteethband@gmail.com"
+              target="_blank"
+              rel="noreferrer">
+          hockeyteethband@gmail.com
+        </Link>
+      </Typography>
     </>
   );
 }
