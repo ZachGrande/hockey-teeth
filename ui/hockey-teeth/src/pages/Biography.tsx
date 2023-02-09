@@ -1,5 +1,5 @@
 import React from "react";
-import {ImageList, ImageListItem, Link, Typography} from "@mui/material";
+import {ImageList, ImageListItem, Link, List, Typography} from "@mui/material";
 import {biography} from "../data/Biography";
 import bamf from "../assets/band-photos/bamf.png";
 import photo1 from "../assets/band-photos/band-01.png";
@@ -10,6 +10,21 @@ import photo5 from "../assets/band-photos/band-05.png";
 import photo6 from "../assets/band-photos/band-06.png";
 
 function Biography() {
+  const accolades = [
+    {
+      description: "2020 Winners of Western Washington University's Battle of the Bands"
+    },
+    {
+      description: "Over 45,000 all-time streams across Apple Music & Spotify"
+    },
+    {
+      description: "Generated over 15,000 total streams for our first single, Apt"
+    },
+    {
+      description: "Over 7,000 total streams for our latest release, Sick Of Me"
+    }
+  ]
+
   const images = [
     {
       title: "Photo 1",
@@ -112,9 +127,23 @@ function Biography() {
         ))}
       </ImageList>
       <Typography variant="h3">
+        Accolades
+      </Typography>
+      <List>
+        {accolades.map((item) => (
+          <Typography key={item.description} variant="body1"
+                      sx={{
+                        mt: 2,
+                        mb: 2
+                      }}>
+            {item.description}
+          </Typography>
+        ))}
+      </List>
+      <Typography variant="h3">
         Contact Info
       </Typography>
-      <Typography variant="body1" sx={{ margin: 5 }}>
+      <Typography variant="body1" sx={{ margin: 2 }}>
         For booking requests, please email us at
         <br />
         <Link variant="body1" color="inherit" href="mailto: hockeyteethband@gmail.com"
