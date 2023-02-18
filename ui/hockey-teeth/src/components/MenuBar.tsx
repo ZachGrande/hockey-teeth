@@ -34,7 +34,7 @@ function MenuBar() {
 
   return (
     <Grid container rowSpacing={1} justifyContent="center" columns={{ xs: 4, sm: 8, md: 12}}
-    sx={{marginBottom: theme.spacing(2)}}>
+    sx={{marginBottom: theme.spacing(8)}}>
       {menu.map((data, key) => {
         return (
           <Grid item xs={6} key={key}>
