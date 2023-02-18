@@ -1,13 +1,6 @@
 import React from "react";
 import {ImageList, ImageListItem, Link, List, Typography} from "@mui/material";
 import {biography} from "../data/Biography";
-import bamf from "../assets/band-photos/bamf.png";
-import photo1 from "../assets/band-photos/band-01.png";
-import photo2 from "../assets/band-photos/band-02.png";
-import photo3 from "../assets/band-photos/band-03.png";
-import photo4 from "../assets/band-photos/band-04.png";
-import photo5 from "../assets/band-photos/band-05.png";
-import photo6 from "../assets/band-photos/band-06.png";
 
 function Biography() {
   const accolades = [
@@ -28,42 +21,42 @@ function Biography() {
   const images = [
     {
       title: "Photo 1",
-      image: photo1,
+      image: "https://d19uxx92abk94f.cloudfront.net/band-photos/band-01.png",
       cols: 2,
       rows: 1,
       width: "10px"
     },
     {
       title: "Photo 2",
-      image: photo2,
+      image: "https://d19uxx92abk94f.cloudfront.net/band-photos/band-02.png",
       cols: 2,
       rows: 2,
       width: "64px"
     },
     {
       title: "Photo 3",
-      image: photo3,
+      image: "https://d19uxx92abk94f.cloudfront.net/band-photos/band-03.png",
       cols: 2,
       rows: 2,
       width: "64px"
     },
     {
       title: "Photo 4",
-      image: photo4,
+      image: "https://d19uxx92abk94f.cloudfront.net/band-photos/band-04.png",
       cols: 1,
       rows: 2,
       width: "64px"
     },
     {
       title: "Photo 5",
-      image: photo5,
+      image: "https://d19uxx92abk94f.cloudfront.net/band-photos/band-05.png",
       cols: 1,
       rows: 2,
       width: "64px"
     },
     {
       title: "Photo 6",
-      image: photo6,
+      image: "https://d19uxx92abk94f.cloudfront.net/band-photos/band-06.png",
       cols: 2,
       rows: 1,
       width: "64px"
@@ -76,14 +69,19 @@ function Biography() {
         style={{
           position: 'relative',
           display: 'flex',
-          height: '35vh',
+          paddingBottom: '66.67%',
+          height: 0,
           overflow: 'hidden',
-          justifyContent: 'center',
-          marginLeft: 10,
-          marginRight: 10
+          justifyContent: 'center'
         }}
       >
-        <img src={bamf} alt="bamf" />
+        <img
+          width="90%" height="90%"
+          style={{
+            position: 'absolute'
+          }}
+          src={"https://d19uxx92abk94f.cloudfront.net/band-photos/bamf.png"} alt="bamf"
+        />
       </div>
       <Typography variant="body1">
         Hockey Teeth at BAMF! in August 2022.
