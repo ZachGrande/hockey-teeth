@@ -18,15 +18,18 @@ const theme = createTheme({
     fontSize: 12,
     fontFamily: ['Playfair-Display', 'serif'].join(','),
     h1: {
-      fontFamily: ['Mansalva', 'serif'].join(','),
-      fontSize: 50
+      fontFamily: ['Montserrat', 'sans-serif'].join(','),
+      fontSize: 50,
+      fontWeight: "bold"
     },
     h2: {
-      fontFamily: ['Mansalva', 'serif'].join(',')
+      fontFamily: ['Montserrat', 'sans-serif'].join(','),
+      fontWeight: "bold"
     },
     h3: {
-      fontFamily: ['Mansalva', 'serif'].join(','),
-      fontSize: 30
+      fontFamily: ['Montserrat', 'sans-serif'].join(','),
+      fontSize: 30,
+      fontWeight: "bold"
     },
     h4: {
       fontFamily: ['Playfair-Display', 'serif'].join(','),
