@@ -65,6 +65,8 @@ function Biography() {
 
   return (
     <>
+      <Typography variant="h1">Hockey Teeth</Typography>
+      <br />
       <div
         style={{
           position: 'relative',
