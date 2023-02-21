@@ -10,7 +10,7 @@ function Home({ title, data }: IShowsProps) {
   return (
     <div>
       <Shows title={title} data={data}/>
-      <Biography />
+      <Biography showAccolades={false}/>
     </div>
   );
 }

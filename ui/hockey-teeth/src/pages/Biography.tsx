@@ -2,7 +2,11 @@ import React from "react";
 import {ImageList, ImageListItem, Link, List, Typography} from "@mui/material";
 import {biography} from "../data/Biography";
 
-function Biography() {
+interface IBiographyProps {
+  showAccolades: boolean;
+}
+
+function Biography({ showAccolades }: IBiographyProps) {
   const accolades = [
     {
       description: "2020 Winners of Western Washington University's Battle of the Bands"
@@ -126,20 +130,23 @@ function Biography() {
           </ImageListItem>
         ))}
       </ImageList>
-      <Typography variant="h3">
-        Accolades
-      </Typography>
-      <List>
-        {accolades.map((item) => (
-          <Typography key={item.description} variant="body1"
-                      sx={{
-                        mt: 2,
-                        mb: 2
-                      }}>
-            {item.description}
-          </Typography>
-        ))}
-      </List>
+      {showAccolades &&
+        <>
+          <Typography variant="h3">
+            Accolades
+          </Typography><List>
+            {accolades.map((item) => (
+              <Typography key={item.description} variant="body1"
+                          sx={{
+                            mt: 2,
+                            mb: 2
+                          }}>
+                {item.description}
+              </Typography>
+            ))}
+          </List>
+        </>
+      }
       <Typography variant="h3">
         Contact Info
       </Typography>
