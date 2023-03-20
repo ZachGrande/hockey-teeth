@@ -10,8 +10,8 @@ export const shows = [
     date: "Apr 23, 2023",
     venue: "Skagit Valley Tulip Festival",
     location: "Mount Vernon, WA",
-    link: "https://tuliptown.com/pages/tickets",
-    linkIncluded: true
+    link: "",
+    linkIncluded: false
   },
   {
     date: "May 3, 2023",
