@@ -1,5 +1,12 @@
 export const shows = [
   {
+    date: "Mar 25, 2023",
+    venue: "The Blue Room",
+    location: "Bellingham, WA",
+    link: "",
+    linkIncluded: false
+  },
+  {
     date: "Feb 24, 2023",
     venue: "The Blue Room w/ Kazmyn",
     location: "Bellingham, WA",
