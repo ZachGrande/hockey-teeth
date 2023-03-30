@@ -4,12 +4,16 @@ import React from "react";
 function Videos() {
   const videos = [
     {
-      title: "Isolation",
-      link: "https://www.youtube.com/embed/8kFYLvi7u0o"
+      title: "KSPU Session",
+      link: "https://www.youtube.com/embed/tUz4Hmn6lAI"
     },
     {
       title: "Freshwater Session",
       link: "https://www.youtube.com/embed/FVeE-bCO3XQ"
+    },
+    {
+      title: "Isolation",
+      link: "https://www.youtube.com/embed/8kFYLvi7u0o"
     },
     {
       title: "Go There",
