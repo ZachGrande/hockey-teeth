@@ -1,5 +1,12 @@
 export const shows = [
   {
+    date: "Apr 23, 2023",
+    venue: "Skagit Valley Tulip Festival",
+    location: "Mount Vernon, WA",
+    link: "",
+    linkIncluded: false
+  },
+  {
     date: "Mar 25, 2023",
     venue: "The Blue Room",
     location: "Bellingham, WA",
