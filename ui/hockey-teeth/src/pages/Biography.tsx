@@ -12,13 +12,13 @@ function Biography({ showAccolades }: IBiographyProps) {
       description: "2020 Winners of Western Washington University's Battle of the Bands"
     },
     {
-      description: "Over 45,000 all-time streams across Apple Music & Spotify"
+      description: "Over 50,000 all-time streams across Apple Music & Spotify"
     },
     {
       description: "Generated over 15,000 total streams for our first single, Apt"
     },
     {
-      description: "Over 7,000 total streams for our latest release, Sick Of Me"
+      description: "Over 10,000 total streams for our latest release, Sick Of Me"
     }
   ]
 
