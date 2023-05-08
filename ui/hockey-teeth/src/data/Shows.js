@@ -10,7 +10,7 @@ export const shows = [
     date: "July 6, 2023",
     venue: "The Wild Buffalo",
     location: "Bellingham, WA",
-    link: "https://www.venuepilot.co/events/73896/orders/new",
-    linkIncluded: true
+    link: "",
+    linkIncluded: false
   }
 ];
