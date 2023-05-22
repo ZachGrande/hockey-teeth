@@ -7,6 +7,13 @@ export const shows = [
     linkIncluded: true
   },
   {
+    date: "July 2, 2023",
+    venue: "The Shakedown",
+    location: "Bellingham, WA",
+    link: "",
+    linkIncluded: false
+  },
+  {
     date: "July 6, 2023",
     venue: "The Wild Buffalo",
     location: "Bellingham, WA",
