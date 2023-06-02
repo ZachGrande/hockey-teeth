@@ -4,7 +4,7 @@ export const shows = [
     venue: "The Blue Room",
     location: "Bellingham, WA",
     link: "",
-    linkIncluded: true
+    linkIncluded: false
   },
   {
     date: "May 3, 2023",
