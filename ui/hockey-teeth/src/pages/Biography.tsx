@@ -86,23 +86,9 @@ function Biography({ showAccolades }: IBiographyProps) {
           style={{
             position: 'absolute'
           }}
-          src={"https://d19uxx92abk94f.cloudfront.net/band-photos/bamf.png"} alt="bamf"
+          src={"https://d19uxx92abk94f.cloudfront.net/band-photos/cover.png"} alt="cover"
         />
       </div>
-      <Typography variant="body1">
-        Hockey Teeth at BAMF! in August 2022.
-      </Typography>
-      <Link
-        variant="body1"
-        color="inherit"
-        href="https://www.instagram.com/scottstarkphoto/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Photo courtesy of @scottstarkphoto.
-      </Link>
-      <br />
-      <br />
       <Typography variant="h3">
         About Hockey Teeth
       </Typography>
