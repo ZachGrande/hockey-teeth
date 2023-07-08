@@ -1,6 +1,7 @@
 import React from "react";
 import Shows from "./Shows";
 import Biography from "./Biography";
+import NewReleaseVideo from "../components/NewReleaseVideo";
 
 interface IShowsProps {
   title: string;
@@ -9,6 +10,7 @@ interface IShowsProps {
 function Home({ title, data }: IShowsProps) {
   return (
     <div>
+      <NewReleaseVideo />
       <Shows title={title} data={data}/>
       <Biography showAccolades={false}/>
     </div>
