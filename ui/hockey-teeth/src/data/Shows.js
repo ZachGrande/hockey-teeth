@@ -1,9 +1,9 @@
 export const shows = [
   {
-    date: "July 6, 2023",
-    venue: "The Wild Buffalo",
-    location: "Bellingham, WA",
-    link: "https://wildbuffalo.net/#/events?event_id=75586",
+    date: "July 15, 2023",
+    venue: "Barboza",
+    location: "Seattle, WA",
+    link: "https://www.axs.com/events/487917/caspian-coberly-tickets?skin=barboza",
     linkIncluded: true
   },
   {

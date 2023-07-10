@@ -1,5 +1,12 @@
 export const shows = [
   {
+    date: "July 6, 2023",
+    venue: "The Wild Buffalo",
+    location: "Bellingham, WA",
+    link: "",
+    linkIncluded: false
+  },
+  {
     date: "May 26, 2023",
     venue: "The Blue Room",
     location: "Bellingham, WA",
