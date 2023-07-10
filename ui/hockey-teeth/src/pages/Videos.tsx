@@ -4,6 +4,10 @@ import React from "react";
 function Videos() {
   const videos = [
     {
+      title: "Sick Of Me",
+      link: "https://www.youtube.com/embed/c-3rrAArNFU"
+    },
+    {
       title: "KSPU Session",
       link: "https://www.youtube.com/embed/tUz4Hmn6lAI"
     },
