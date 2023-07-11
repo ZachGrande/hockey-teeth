@@ -16,7 +16,8 @@ const NewReleaseVideo = () => {
             sx={{
                 display: 'flex',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                mt: '25px'
             }}
         >
             <Card
