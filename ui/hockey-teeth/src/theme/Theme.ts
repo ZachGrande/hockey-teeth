@@ -31,7 +31,15 @@ const theme = createTheme({
     h4: {
       fontFamily: ['Playfair-Display', 'serif'].join(','),
       fontSize: 20
-    }
+    },
+    h5: {
+      fontFamily: ['Montserrat', 'sans-serif'].join(','),
+      fontSize: 20
+    },
+    h6: {
+      fontFamily: ['Montserrat', 'sans-serif'].join(','),
+      fontSize: 10
+    },
   }
 })
 
