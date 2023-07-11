@@ -11,8 +11,8 @@ interface IShowsProps {
 function Home({ title, data }: IShowsProps) {
   return (
     <div>
-      <NewReleaseVideo />
       <NewReleaseMusic />
+      <NewReleaseVideo />
       <Shows title={title} data={data}/>
       <Biography showAccolades={false}/>
     </div>
