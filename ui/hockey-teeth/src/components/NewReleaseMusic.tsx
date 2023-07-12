@@ -47,11 +47,11 @@ const NewReleaseVideo = () => {
                     <Typography variant="h3" component="div" sx={{ mb: 1 }}>
                         {album.songName}
                     </Typography>
-                    <Typography variant="h5" color={theme.palette.text.secondary} font-size="10">
+                    <Typography variant="h5" color={theme.palette.text.secondary}>
                         {album.releaseDate}
                     </Typography>
                     <Button variant="contained" href={album.preSaleLink} target="_blank" rel="noreferrer" sx={{ mt: 2 }}>
-                        <Typography variant="h6" font-size="10">
+                        <Typography variant="h6">
                             {"PRESALE"}
                         </Typography>
                     </Button>
