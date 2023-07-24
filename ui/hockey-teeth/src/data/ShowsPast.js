@@ -1,5 +1,12 @@
 export const shows = [
   {
+    date: "July 21, 2023",
+    venue: "The Shakedown",
+    location: "Bellingham, WA",
+    link: "",
+    linkIncluded: false
+  },
+  {
     date: "July 15, 2023",
     venue: "Barboza",
     location: "Seattle, WA",
