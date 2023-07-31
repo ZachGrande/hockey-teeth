@@ -11,13 +11,13 @@ interface IShowsProps {
 function Home({ title, data }: IShowsProps) {
   const album1 =
     {
-      songName: "Dialtone",
+      songName: "Dialtone - Single",
       coverURL: "https://d19uxx92abk94f.cloudfront.net/album-covers/dialtone.png",
       link: "https://distrokid.com/hyperfollow/hockeyteeth/dialtone"
     };
   const album2 =
     {
-      songName: "Start and Delay",
+      songName: "Start and Delay - EP",
       releaseDate: "August 18",
       coverURL: "https://d19uxx92abk94f.cloudfront.net/album-covers/start-and-delay.png",
       link: "https://distrokid.com/hyperfollow/hockeyteeth/start-and-delay"
