@@ -1,15 +1,17 @@
 import React from 'react';
 import {Card, CardContent, Typography, Button, Box, Container, useTheme} from '@mui/material';
 
-const NewReleaseVideo = () => {
+export interface INewReleaseVideoProps {
+    album: {
+        songName: string;
+        releaseDate?: string;
+        coverURL: string;
+        link: string;
+    }
+}
+
+const NewReleaseVideo = ({ album }: INewReleaseVideoProps) => {
     const theme = useTheme();
-    const album =
-        {
-            songName: "Dialtone",
-            releaseDate: "July 21",
-            coverURL: "https://d19uxx92abk94f.cloudfront.net/album-covers/dialtone.png",
-            preSaleLink: "https://distrokid.com/hyperfollow/hockeyteeth/dialtone"
-        };
 
     return (
         <Container
@@ -50,9 +52,9 @@ const NewReleaseVideo = () => {
                     <Typography variant="h5" color={theme.palette.text.secondary}>
                         {album.releaseDate}
                     </Typography>
-                    <Button variant="contained" href={album.preSaleLink} target="_blank" rel="noreferrer" sx={{ mt: 2 }}>
+                    <Button variant="contained" href={album.link} target="_blank" rel="noreferrer" sx={{ mt: 2 }}>
                         <Typography variant="h6">
-                            {"PRESALE"}
+                            {album.releaseDate ? "PRESALE" : "OUT NOW"}
                         </Typography>
                     </Button>
                 </CardContent>
