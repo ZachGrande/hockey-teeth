@@ -1,6 +1,7 @@
 import React from "react";
 import {Navigate, Route, Routes} from "react-router-dom";
 import HomeLayout from "../layouts/HomeLayout";
+import AdminLayout from "../layouts/AdminLayout";
 import Shows from "../pages/Shows";
 import Videos from "../pages/Videos";
 import {shows as showsFuture} from "../data/Shows";
@@ -9,6 +10,7 @@ import News from "../pages/News";
 import Biography from "../pages/Biography";
 import Music from "../pages/Music";
 import Home from "../pages/Home";
+import HomeAdmin from "../pages/admin/HomeAdmin";
 
 function SiteRouter() {
   return (
@@ -21,6 +23,9 @@ function SiteRouter() {
         <Route path="news" element={<News />}/>
         <Route path="bio" element={<Biography showAccolades={true}/>}/>
         <Route path="music" element={<Music />}/>
+      </Route>
+      <Route element={<AdminLayout />}>
+        <Route path="admin" element={<HomeAdmin />}/>
       </Route>
       <Route path="*" element={<Navigate replace to="/home" />}/>
     </Routes>
