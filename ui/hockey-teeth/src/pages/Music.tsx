@@ -9,6 +9,11 @@ import apt from '../assets/album-covers/apt.png';
 function Music() {
   const albumCovers = [
     {
+      title: "Dialtone",
+      image: "https://d19uxx92abk94f.cloudfront.net/album-covers/dialtone.png",
+      link: "https://open.spotify.com/album/30yf09Y0X0GLDLQ6HiXP9z?si=j-tjTXdRREKCFI9Tv79mmA"
+    },
+    {
       title: "Sick Of Me",
       image: sickOfMe,
       link: "https://open.spotify.com/album/3M4Al1R2VKqZyARSmnnnA3?si=OpoCkQ1rS1ikAI-wFX7p4Q"
