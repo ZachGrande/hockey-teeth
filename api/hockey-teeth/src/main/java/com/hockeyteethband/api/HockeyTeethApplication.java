@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class HockeyTeethApplication {
 
-  public static void main(String[] args) {
-    SpringApplication.run(HockeyTeethApplication.class, args);
-  }
+    public static void main(String[] args) {
+        SpringApplication.run(HockeyTeethApplication.class, args);
+    }
 
 }
