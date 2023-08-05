@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import axios from "axios";
 import config from "../../src/config";
 import {Box, CircularProgress, Typography} from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -10,18 +11,15 @@ const HealthStatus = () => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        fetch(`${config.api.apiUrl}/status`)
+        axios.get(`${config.api.apiUrl}/status`)
             .then((response) => {
-                if (!response.ok) {
+                if (response.status !== 200) {
                     throw new Error("Error fetching status");
                 }
-                return response.json();
-            })
-            .then((data) => {
-                setStatus(data.status);
+                setStatus(response.data.status);
                 setLoading(false);
             })
-            .catch((error) => {
+            .catch(() => {
                 setError(true);
                 setLoading(false);
             });
