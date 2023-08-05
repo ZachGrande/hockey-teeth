@@ -92,9 +92,11 @@ function Biography({ showAccolades }: IBiographyProps) {
       <Typography variant="h3">
         About Hockey Teeth
       </Typography>
-      <Typography variant="body1" sx={{ margin: 5 }}>
-        {biography.bio}
-      </Typography>
+      {biography.map((paragraph) => (
+        <Typography variant="body1" sx={{ margin: 5 }} key={paragraph}>
+          {paragraph}
+        </Typography>
+      ))}
       <ImageList
         sx={{
           margin: 5,
