@@ -37,6 +37,18 @@ function Music() {
   return (
     <>
       <Stack spacing={2}>
+      <Grid item xs={6}>
+                <iframe style={{
+                          borderRadius: "12px"
+                        }}
+                        src="https://open.spotify.com/embed/track/2GSXrzXjzqgy9sIAl9cjKS?utm_source=generator"
+                        width="90%"
+                        height="152"
+                        frameBorder="0"
+                        allowFullScreen
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy" />
+              </Grid>
         <Grid item xs={6}>
           <iframe style={{
                     borderRadius: "12px"
