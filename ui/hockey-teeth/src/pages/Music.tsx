@@ -1,10 +1,5 @@
 import React from "react";
 import {Grid, ImageListItem, Link, Stack, Typography} from "@mui/material";
-import sickOfMe from '../assets/album-covers/sick-of-me.png';
-import isolation from '../assets/album-covers/isolation.png';
-import goThere from '../assets/album-covers/go-there.png';
-import edelweiss from '../assets/album-covers/edelweiss.png';
-import apt from '../assets/album-covers/apt.png';
 
 function Music() {
   const albumCovers = [
@@ -15,27 +10,27 @@ function Music() {
     },
     {
       title: "Sick Of Me",
-      image: sickOfMe,
+      image: "https://d19uxx92abk94f.cloudfront.net/album-covers/sick-of-me.png",
       link: "https://open.spotify.com/album/3M4Al1R2VKqZyARSmnnnA3?si=OpoCkQ1rS1ikAI-wFX7p4Q"
     },
     {
       title: "Isolation",
-      image: isolation,
+      image: "https://d19uxx92abk94f.cloudfront.net/album-covers/isolation.png",
       link: "https://open.spotify.com/album/6FHDPRswuYZTjgWlE92GKB?si=wttIz5MURbuAvoBTwFtFWw"
     },
     {
       title: "Go There",
-      image: goThere,
+      image: "https://d19uxx92abk94f.cloudfront.net/album-covers/go-there.png",
       link: "https://open.spotify.com/album/3aHOEbn6pnehWmSSbui41f?si=mfYcGhnMQdyLaVZAC77Z4A"
     },
     {
       title: "Edelweiss",
-      image: edelweiss,
+      image: "https://d19uxx92abk94f.cloudfront.net/album-covers/edelweiss.png",
       link: "https://open.spotify.com/album/74Qi9mrHRNBcQiwsMstymN?si=szrnb83HS2CxioR8fMZ4Gg"
     },
     {
       title: "Apt",
-      image: apt,
+      image: "https://d19uxx92abk94f.cloudfront.net/album-covers/apt.png",
       link: "https://open.spotify.com/album/1wI8wJu5xP8R52Y4oITx7s?si=8SXZACKzSwmZb7Sbnnm-jA"
     }
   ]
