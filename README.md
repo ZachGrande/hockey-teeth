@@ -12,38 +12,19 @@ This repository contains the Spring Boot (3.1.2) API for Hockey Teeth. Follow th
 1. **Clone the Repository**
 
 ```
-git clone [repository-url] && cd [repository-directory]
+git clone git@github.com:ZachGrande/hockey-teeth.git && cd hockey-teeth/api/hockey-teeth
 ```
 
-2. **Running with Gradle**
-```
-./gradlew bootRun
-```
-
-API will be accessible at http://localhost:8080.
-
-### Preparing the Docker Container
-1. **Building the Docker Image**
+2. **Build with Gradle**
 
 ```
 ./gradlew build
-
-docker build -t hockeyteeth-api:latest .
 ```
 
-2. **Running the Docker Container**
+3. **Run Docker Container**
 
 ```
-docker run -p 8080:8080 hockeyteeth-api:latest
+./runapi.sh
 ```
+
 API will be accessible at http://localhost:8080.
-
-3. **Stopping the Docker Container**
-
-```
-# list running docker containers
-docker ps
-
-# stop the container
-docker stop [CONTAINER_ID]
-```
