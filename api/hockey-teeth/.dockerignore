@@ -1,0 +1,14 @@
+*.log
+*.class
+*.jar
+*.war
+*.ear
+*.tar
+*.rar
+.DS_Store
+.git/
+.idea/
+*.iml
+*.swp
+*.backup
+*.env

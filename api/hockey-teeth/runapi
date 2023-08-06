@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+# Close current docker containers
+docker-compose down || exit 1
+
+# Build new docker containers
+docker-compose build || exit 1
+
+# Run docker containers
+docker-compose up || exit 1
