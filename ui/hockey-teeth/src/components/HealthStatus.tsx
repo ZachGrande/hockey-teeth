@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import config from "../../src/config";
 import {Box, CircularProgress, Typography} from "@mui/material";

@@ -1,10 +1,11 @@
 import React from "react";
-import ShowList from "../components/ShowList/ShowList";
+import ShowList from "../components/ShowList";
+import {ShowType} from "../data/Shows.types";
 import {Typography} from "@mui/material";
 
 interface IShowsProps {
   title: string;
-  data: object;
+  data: ShowType[];
 }
 function Shows({ title, data }: IShowsProps) {
   return (

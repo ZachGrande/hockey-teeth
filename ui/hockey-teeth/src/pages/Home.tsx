@@ -3,10 +3,11 @@ import Shows from "./Shows";
 import Biography from "./Biography";
 import NewReleaseVideo from "../components/NewReleaseVideo";
 import NewReleaseMusic from "../components/NewReleaseMusic";
+import {ShowType} from "../data/Shows.types";
 
 interface IShowsProps {
   title: string;
-  data: object;
+  data: ShowType[];
 }
 function Home({ title, data }: IShowsProps) {
   const album1 =
