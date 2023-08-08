@@ -63,12 +63,12 @@ function Footer() {
           alignItems: 'center',
         }}
       >
-        {social.map((data, key) => (
+        {social.map((data) => (
           <a
             href={data.link}
             target="_blank"
             rel="noreferrer"
-            key={key}
+            key={data.image}
           >
             <img src={data.image} alt="instagram" />
           </a>

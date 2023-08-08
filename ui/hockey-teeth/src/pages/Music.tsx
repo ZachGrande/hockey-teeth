@@ -46,6 +46,7 @@ function Music() {
               border: '0px',
             }}
             src="https://open.spotify.com/embed/track/2GSXrzXjzqgy9sIAl9cjKS?utm_source=generator"
+            title="Dialtone"
             width="90%"
             height="152"
             allowFullScreen
@@ -60,6 +61,7 @@ function Music() {
               border: '0px',
             }}
             src="https://open.spotify.com/embed/album/3M4Al1R2VKqZyARSmnnnA3?utm_source=generator"
+            title="Sick Of Me"
             width="90%"
             height="152"
             allowFullScreen
@@ -74,6 +76,7 @@ function Music() {
               border: '0px',
             }}
             src="https://open.spotify.com/embed/album/6FHDPRswuYZTjgWlE92GKB?utm_source=generator"
+            title="Isolation"
             width="90%"
             height="152"
             allowFullScreen
@@ -88,6 +91,7 @@ function Music() {
               border: '0px',
             }}
             src="https://open.spotify.com/embed/album/3aHOEbn6pnehWmSSbui41f?utm_source=generator"
+            title="Go There"
             width="90%"
             height="352"
             allowFullScreen

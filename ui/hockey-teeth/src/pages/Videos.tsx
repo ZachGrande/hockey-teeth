@@ -36,9 +36,9 @@ function Videos() {
   return (
     <>
       <Typography variant="h1">Videos</Typography>
-      {videos.map((data, key) => (
+      {videos.map((data) => (
         <div
-          key={key}
+          key={data.title}
           style={{
             position: 'relative',
             display: 'flex',

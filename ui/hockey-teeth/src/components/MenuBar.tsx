@@ -40,8 +40,8 @@ function MenuBar() {
       columns={{ xs: 4, sm: 8, md: 12 }}
       sx={{ marginBottom: theme.spacing(8) }}
     >
-      {menu.map((data, key) => (
-        <Grid item xs={6} key={key}>
+      {menu.map((data) => (
+        <Grid item xs={6} key={data.title}>
           <Link
             to={data.route}
             variant="h3"

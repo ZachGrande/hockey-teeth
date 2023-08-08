@@ -2,7 +2,7 @@ import React from 'react';
 import {
   ImageList, ImageListItem, Link, List, Typography,
 } from '@mui/material';
-import { biography } from '../data/Biography';
+import biography from '../data/Biography';
 
 interface IBiographyProps {
   showAccolades: boolean;

@@ -1,4 +1,4 @@
-export const biography = [
+const biography = [
   "HOCKEY TEETH is like every band you've ever heard before, just better and with catchier songs. HOCKEY TEETH has been compared to Hippo Campus, Phoenix, and even Sugar Ray. But HOCKEY TEETH does not know any of these posers.",
   'Combining the high energy of modern rock live performance with the catchy melodies of power pop, Hockey Teeth aims to redefine indie music in the Pacific Northwest.',
   "Formed in 2019 while cleaning dishes at the Ridgeway commons, Hockey Teeth has always felt like a lucky, chance meeting between founding members Riley Adair, Joey Boone, and Owen Rollison. Having strong support from the local music scene in Bellingham, WA from the beginning, Hockey Teeth won Western Washington University's 2020 Sounds of the Underground battle of the bands as only their third show.",
@@ -6,3 +6,5 @@ export const biography = [
   'Blending inspiration from mid-2000s, raw, indie sound and jazzy, active, melodic bass playing, Hockey Teeth’s newest single "Dialtone" puts you in 1990s Tokyo with its chimey guitars, jazzy chords, angular melodies, and fast but comforting pace.',
   'HOCKEY TEETH is cool, DIALTONE is cool, are YOU cool?',
 ];
+
+export default biography;

@@ -1,4 +1,4 @@
-export const shows = [
+const shows = [
   {
     date: 'July 21, 2023',
     venue: 'The Shakedown',
@@ -301,3 +301,5 @@ export const shows = [
     linkIncluded: false,
   },
 ];
+
+export default shows;

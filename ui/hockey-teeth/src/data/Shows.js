@@ -1,4 +1,4 @@
-export const shows = [
+const shows = [
   {
     date: 'Aug 25, 2023',
     venue: 'Lucky Dime',
@@ -14,3 +14,5 @@ export const shows = [
     linkIncluded: false,
   },
 ];
+
+export default shows;

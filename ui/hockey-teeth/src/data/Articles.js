@@ -1,4 +1,4 @@
-export const articles = [
+const articles = [
   {
     title: 'Long-Awaited Lawnstock Makes First In-Person Return Since 2019',
     author: 'The Western Front',
@@ -15,3 +15,5 @@ export const articles = [
     link: 'https://asreview.org/2020/03/09/hockey-teeth-wins-sounds-of-the-underground/',
   },
 ];
+
+export default articles;
