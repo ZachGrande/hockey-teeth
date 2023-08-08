@@ -1,0 +1,7 @@
+spotify:
+  api:
+    url: "https://api.spotify.com/v1"
+    artistId: "2Flj4MtGAxNIW1Ahutwa37"
+    client:
+      id: ${SPOTIFY_API_CLIENT_ID}
+      secret: ${SPOTIFY_API_CLIENT_SECRET}

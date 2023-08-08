@@ -3,5 +3,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: hockeyteeth-api
     ports:
       - "8080:8080"
+    environment:
+      SPOTIFY_API_CLIENT_ID: ${SPOTIFY_API_CLIENT_ID}
+      SPOTIFY_API_CLIENT_SECRET: ${SPOTIFY_API_CLIENT_SECRET}
