@@ -18,6 +18,7 @@ module.exports = {
     'no-console': ['error', { allow: ['warn', 'error'] }],
     'no-warning-comments': ['error', { terms: ['todo'], location: 'start' }],
   },
+  ignorePatterns: [".eslintrc.js"],
   settings: {
     react: {
       version: 'detect',
