@@ -1,8 +1,8 @@
-import logo from "../assets/logo.png";
-import React from "react";
-import {Outlet} from "react-router-dom";
-import {Container} from "@mui/material";
-import {withAuthenticationRequired} from "@auth0/auth0-react";
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import { Container } from '@mui/material';
+import { withAuthenticationRequired } from '@auth0/auth0-react';
+import logo from '../assets/logo.png';
 
 function AdminLayout() {
   return (
@@ -18,5 +18,5 @@ function AdminLayout() {
 }
 
 export default withAuthenticationRequired(AdminLayout, {
-    onRedirecting: () => <div>Loading...</div>,
+  onRedirecting: () => <div>Loading...</div>,
 });

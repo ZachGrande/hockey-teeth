@@ -1,6 +1,8 @@
-import React from "react";
-import {ImageList, ImageListItem, Link, List, Typography} from "@mui/material";
-import {biography} from "../data/Biography";
+import React from 'react';
+import {
+  ImageList, ImageListItem, Link, List, Typography,
+} from '@mui/material';
+import { biography } from '../data/Biography';
 
 interface IBiographyProps {
   showAccolades: boolean;
@@ -9,63 +11,63 @@ interface IBiographyProps {
 function Biography({ showAccolades }: IBiographyProps) {
   const accolades = [
     {
-      description: "2020 Winners of Western Washington University's Battle of the Bands"
+      description: "2020 Winners of Western Washington University's Battle of the Bands",
     },
     {
-      description: "Over 50,000 all-time streams across Apple Music & Spotify"
+      description: 'Over 50,000 all-time streams across Apple Music & Spotify',
     },
     {
-      description: "Generated over 15,000 total streams for our first single, Apt"
+      description: 'Generated over 15,000 total streams for our first single, Apt',
     },
     {
-      description: "Over 10,000 total streams for our latest release, Sick Of Me"
-    }
-  ]
+      description: 'Over 10,000 total streams for our latest release, Sick Of Me',
+    },
+  ];
 
   const images = [
     {
-      title: "Photo 1",
-      image: "https://d19uxx92abk94f.cloudfront.net/band-photos/band-01.png",
+      title: 'Photo 1',
+      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-01.png',
       cols: 2,
       rows: 1,
-      width: "10px"
+      width: '10px',
     },
     {
-      title: "Photo 2",
-      image: "https://d19uxx92abk94f.cloudfront.net/band-photos/band-02.png",
+      title: 'Photo 2',
+      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-02.png',
       cols: 2,
       rows: 2,
-      width: "64px"
+      width: '64px',
     },
     {
-      title: "Photo 3",
-      image: "https://d19uxx92abk94f.cloudfront.net/band-photos/band-03.png",
+      title: 'Photo 3',
+      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-03.png',
       cols: 2,
       rows: 2,
-      width: "64px"
+      width: '64px',
     },
     {
-      title: "Photo 4",
-      image: "https://d19uxx92abk94f.cloudfront.net/band-photos/band-04.png",
+      title: 'Photo 4',
+      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-04.png',
       cols: 1,
       rows: 2,
-      width: "64px"
+      width: '64px',
     },
     {
-      title: "Photo 5",
-      image: "https://d19uxx92abk94f.cloudfront.net/band-photos/band-05.png",
+      title: 'Photo 5',
+      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-05.png',
       cols: 1,
       rows: 2,
-      width: "64px"
+      width: '64px',
     },
     {
-      title: "Photo 6",
-      image: "https://d19uxx92abk94f.cloudfront.net/band-photos/band-06.png",
+      title: 'Photo 6',
+      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-06.png',
       cols: 2,
       rows: 1,
-      width: "64px"
+      width: '64px',
     },
-  ]
+  ];
 
   return (
     <>
@@ -78,15 +80,17 @@ function Biography({ showAccolades }: IBiographyProps) {
           paddingBottom: '66.67%',
           height: 0,
           overflow: 'hidden',
-          justifyContent: 'center'
+          justifyContent: 'center',
         }}
       >
         <img
-          width="90%" height="90%"
+          width="90%"
+          height="90%"
           style={{
-            position: 'absolute'
+            position: 'absolute',
           }}
-          src={"https://d19uxx92abk94f.cloudfront.net/band-photos/cover.png"} alt="cover"
+          src="https://d19uxx92abk94f.cloudfront.net/band-photos/cover.png"
+          alt="cover"
         />
       </div>
       <Typography variant="h3">
@@ -109,41 +113,51 @@ function Biography({ showAccolades }: IBiographyProps) {
           <ImageListItem
             key={item.image}
             cols={item.cols || 1}
-            rows={item.rows || 1}>
+            rows={item.rows || 1}
+          >
             <img
               src={item.image}
               alt={item.title}
               loading="lazy"
-          />
+            />
           </ImageListItem>
         ))}
       </ImageList>
-      {showAccolades &&
+      {showAccolades
+        && (
         <>
           <Typography variant="h3">
             Accolades
-          </Typography><List>
+          </Typography>
+          <List>
             {accolades.map((item) => (
-              <Typography key={item.description} variant="body1"
-                          sx={{
-                            mt: 2,
-                            mb: 2
-                          }}>
+              <Typography
+                key={item.description}
+                variant="body1"
+                sx={{
+                  mt: 2,
+                  mb: 2,
+                }}
+              >
                 {item.description}
               </Typography>
             ))}
           </List>
         </>
-      }
+        )}
       <Typography variant="h3">
         Contact Info
       </Typography>
       <Typography variant="body1" sx={{ margin: 2 }}>
         For booking requests, please email us at
         <br />
-        <Link variant="body1" color="inherit" href="mailto: hockeyteethband@gmail.com"
-              target="_blank"
-              rel="noreferrer">
+        <Link
+          variant="body1"
+          color="inherit"
+          href="mailto: hockeyteethband@gmail.com"
+          target="_blank"
+          rel="noreferrer"
+        >
           hockeyteethband@gmail.com
         </Link>
       </Typography>

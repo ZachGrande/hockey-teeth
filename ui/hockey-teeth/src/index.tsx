@@ -7,20 +7,20 @@ import reportWebVitals from './reportWebVitals';
 import config from './config';
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
 root.render(
   <Auth0Provider
     domain={config.auth.domain}
     clientId={config.auth.clientId}
     authorizationParams={{
-      redirect_uri: `${window.location.origin}/admin`
+      redirect_uri: `${window.location.origin}/admin`,
     }}
   >
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </Auth0Provider>
+  </Auth0Provider>,
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,7 +1,7 @@
-import React from "react";
-import ShowList from "../components/ShowList";
-import {ShowType} from "../data/Shows.types";
-import {Typography} from "@mui/material";
+import React from 'react';
+import { Typography } from '@mui/material';
+import ShowList from '../components/ShowList';
+import { ShowType } from '../data/Shows.types';
 
 interface IShowsProps {
   title: string;
