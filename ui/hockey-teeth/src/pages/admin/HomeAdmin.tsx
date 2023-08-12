@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography } from '@mui/material';
 import { useAuth0 } from '@auth0/auth0-react';
 import HealthStatus from '../../components/HealthStatus';
+import TopTracksChart from '../../components/TopTracksChart';
 
 function HomeAdmin() {
   const { logout } = useAuth0();
@@ -11,6 +12,9 @@ function HomeAdmin() {
         ADMIN DASHBOARD
       </Typography>
       <HealthStatus />
+      <br />
+      <TopTracksChart />
+      <br />
       <button
         type="button"
         onClick={() => logout({
