@@ -24,3 +24,9 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+test {
+    environment "SPOTIFY_API_CLIENT_ID", "12345"
+    environment "SPOTIFY_API_CLIENT_SECRET", "12345"
+}
+

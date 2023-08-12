@@ -1,0 +1,9 @@
+#!/bin/sh
+
+SECRET=$(aws secretsmanager get-secret-value --secret-id spotify/api/client/secret --query SecretString --output text --region us-west-2)
+
+aws configure list
+
+export SPOTIFY_API_CLIENT_SECRET=$(echo $SECRET | jq -r '.SPOTIFY_API_CLIENT_SECRET')
+
+java -jar /app/hockeyteeth-api.jar
