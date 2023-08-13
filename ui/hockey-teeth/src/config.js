@@ -4,7 +4,7 @@ const config = {
     clientId: '1mwH4FXs3RwDQFBv0dR6cTnKj4UWWukd',
   },
   api: {
-    apiUrl: 'http://api.hockeyteethband.com',
+    apiUrl: 'https://api.hockeyteethband.com',
   },
 };
 
