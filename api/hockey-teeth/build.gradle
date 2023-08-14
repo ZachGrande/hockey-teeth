@@ -18,6 +18,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.json:json:20230618'
+    implementation 'software.amazon.awssdk:dynamodb:2.20.125'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
