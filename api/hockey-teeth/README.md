@@ -32,7 +32,21 @@ hockeyteeth-api   latest    {{IMAGE_ID}}   About a minute ago   1.29GB
 ```sh
 docker tag hockeyteeth-api:latest {{AWS_ACCOUNT_ID}}.dkr.ecr.us-west-2.amazonaws.com/hockeyteeth-api-production
 
+aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin {{AWS_ACCOUNT_ID}}.dkr.ecr.us-west-2.amazonaws.com
+
 docker push {{AWS_ACCOUNT_ID}}.dkr.ecr.us-west-2.amazonaws.com/hockeyteeth-api-production
+```
+
+3. **Delete Old Image in ECR**
+
+Log into the [Elastic Container Registry](https://us-west-2.console.aws.amazon.com/ecr) and delete the image that is not tagged with `latest`. Keep costs low :tada:
+
+4. **Deploy Image on EC2**
+
+In the EC2 instance, run:
+
+```sh
+sudo systemctl restart hockeyteeth-api-production.service
 ```
 
 ## EC2 Setup & Deployment
