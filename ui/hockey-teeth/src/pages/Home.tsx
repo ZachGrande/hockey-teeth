@@ -3,13 +3,12 @@ import Shows from './Shows';
 import Biography from './Biography';
 import NewReleaseVideo from '../components/NewReleaseVideo';
 import NewReleaseMusic from '../components/NewReleaseMusic';
-import { ShowType } from '../data/Shows.types';
 
 interface IShowsProps {
   title: string;
-  data: ShowType[];
+  path: string;
 }
-function Home({ title, data }: IShowsProps) {
+function Home({ title, path }: IShowsProps) {
   const album1 = {
     songName: 'Dialtone - Single',
     coverURL: 'https://d19uxx92abk94f.cloudfront.net/album-covers/dialtone.png',
@@ -27,7 +26,7 @@ function Home({ title, data }: IShowsProps) {
       <NewReleaseMusic album={album2} />
       <NewReleaseMusic album={album1} />
       <NewReleaseVideo />
-      <Shows title={title} data={data} />
+      <Shows title={title} path={path} />
       <Biography showAccolades={false} />
     </div>
   );

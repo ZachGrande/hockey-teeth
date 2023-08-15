@@ -48,7 +48,7 @@ function TopTracksChart() {
   }, []);
 
   if (loading) {
-    return <CircularProgress />;
+    return <CircularProgress style={{ color: theme.palette.text.primary }} />;
   }
 
   if (error) {
