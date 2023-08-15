@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Bar } from 'react-chartjs-2';
-import {
-  Box, Paper, Typography, useTheme,
-} from '@mui/material';
-import ErrorIcon from '@mui/icons-material/Error';
+import { Paper, Typography, useTheme } from '@mui/material';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,6 +9,7 @@ import {
   BarElement,
 } from 'chart.js';
 import Loading from './Loading';
+import ErrorAPI from './ErrorAPI';
 import config from '../config';
 
 ChartJS.register(
@@ -53,12 +51,7 @@ function TopTracksChart() {
 
   if (error) {
     return (
-      <Box>
-        <ErrorIcon color="error" />
-        <Typography variant="body1" color="error">
-          API is not available
-        </Typography>
-      </Box>
+      <ErrorAPI />
     );
   }
 

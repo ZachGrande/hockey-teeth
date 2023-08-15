@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Box, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import ErrorIcon from '@mui/icons-material/Error';
 import Loading from './Loading';
+import ErrorAPI from './ErrorAPI';
 import config from '../config';
 
 function HealthStatus() {
@@ -32,12 +32,7 @@ function HealthStatus() {
 
   if (error || status !== 'up') {
     return (
-      <Box>
-        <ErrorIcon color="error" />
-        <Typography variant="body1" color="error">
-          API is not available
-        </Typography>
-      </Box>
+      <ErrorAPI />
     );
   }
 

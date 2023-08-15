@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography } from '@mui/material';
-import ErrorIcon from '@mui/icons-material/Error';
+import { Typography } from '@mui/material';
 import axios from 'axios';
 import ShowList from '../components/ShowList';
 import Loading from '../components/Loading';
+import ErrorAPI from '../components/ErrorAPI';
 import { ShowType } from '../data/Shows.types';
 import config from '../config';
 
@@ -61,12 +61,7 @@ function Shows({ title, path }: IShowsProps) {
 
   if (error) {
     return (
-      <Box>
-        <ErrorIcon color="error" />
-        <Typography variant="body1" color="error">
-          API is not available
-        </Typography>
-      </Box>
+      <ErrorAPI />
     );
   }
 
