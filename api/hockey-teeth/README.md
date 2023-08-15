@@ -15,6 +15,7 @@ This API serves as a backend for [Hockey Teeth's Official Site](https://hockeyte
 1. **Build the Image**
 
 ```sh
+./gradlew build
 docker-compose build
 ```
 
