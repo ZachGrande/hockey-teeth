@@ -12,6 +12,23 @@ interface IShowsProps {
   path: string;
 }
 
+function formatDate(inputDate: string) {
+  const date = new Date(inputDate);
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  return date.toLocaleDateString('en-US', options);
+}
+
+function sortDates(formattedData: ShowType[], newestFirst: boolean) {
+  return formattedData.sort((a: ShowType, b: ShowType) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    if (newestFirst) {
+      return dateB.getTime() - dateA.getTime();
+    }
+    return dateA.getTime() - dateB.getTime();
+  });
+}
+
 function Shows({ title, path }: IShowsProps) {
   const [shows, setShows] = useState<ShowType[]>([]);
   const [loading, setLoading] = useState(true);
@@ -23,7 +40,13 @@ function Shows({ title, path }: IShowsProps) {
         if (response.status !== 200) {
           throw new Error('Error fetching top tracks');
         }
-        setShows(response.data);
+        const formattedData = response.data.map((show: ShowType) => ({
+          ...show,
+          date: formatDate(show.date),
+        }));
+
+        const sortedData = sortDates(formattedData, path === 'past');
+        setShows(sortedData);
         setLoading(false);
       })
       .catch(() => {
