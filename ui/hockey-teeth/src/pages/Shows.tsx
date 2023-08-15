@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Box, CircularProgress, Typography, useTheme,
-} from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import ErrorIcon from '@mui/icons-material/Error';
 import axios from 'axios';
 import ShowList from '../components/ShowList';
+import Loading from '../components/Loading';
 import { ShowType } from '../data/Shows.types';
 import config from '../config';
 
@@ -17,8 +16,6 @@ function Shows({ title, path }: IShowsProps) {
   const [shows, setShows] = useState<ShowType[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-
-  const theme = useTheme();
 
   useEffect(() => {
     axios.get(`${config.api.apiUrl}/shows/${path}`)
@@ -36,7 +33,7 @@ function Shows({ title, path }: IShowsProps) {
   }, []);
 
   if (loading) {
-    return <CircularProgress style={{ color: theme.palette.text.primary }} />;
+    return <Loading />;
   }
 
   if (error) {

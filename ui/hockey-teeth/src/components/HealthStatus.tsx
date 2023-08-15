@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {
-  Box, CircularProgress, Typography, useTheme,
-} from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ErrorIcon from '@mui/icons-material/Error';
+import Loading from './Loading';
 import config from '../config';
 
 function HealthStatus() {
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-
-  const theme = useTheme();
 
   useEffect(() => {
     axios.get(`${config.api.apiUrl}/status`)
@@ -30,7 +27,7 @@ function HealthStatus() {
   }, []);
 
   if (loading) {
-    return <CircularProgress style={{ color: theme.palette.text.primary }} />;
+    return <Loading />;
   }
 
   if (error || status !== 'up') {

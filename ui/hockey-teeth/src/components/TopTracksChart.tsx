@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Bar } from 'react-chartjs-2';
 import {
-  Box, CircularProgress, Paper, Typography, useTheme,
+  Box, Paper, Typography, useTheme,
 } from '@mui/material';
 import ErrorIcon from '@mui/icons-material/Error';
-
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   BarElement,
 } from 'chart.js';
+import Loading from './Loading';
 import config from '../config';
 
 ChartJS.register(
@@ -48,7 +48,7 @@ function TopTracksChart() {
   }, []);
 
   if (loading) {
-    return <CircularProgress style={{ color: theme.palette.text.primary }} />;
+    return <Loading />;
   }
 
   if (error) {
