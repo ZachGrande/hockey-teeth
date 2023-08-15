@@ -4,6 +4,7 @@ import com.hockeyteethband.api.model.Show;
 import org.springframework.stereotype.Repository;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
+import software.amazon.awssdk.services.dynamodb.model.PutItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.ScanRequest;
 import software.amazon.awssdk.services.dynamodb.model.ScanResponse;
 
@@ -30,6 +31,22 @@ public class ShowsRepository {
         return scanResponse.items().stream()
             .map(this::convertToModel)
             .collect(Collectors.toList());
+    }
+
+    public void addShow(Show show) {
+        Map<String, AttributeValue> item = Map.of(
+            "Date", AttributeValue.builder().s(show.getDate()).build(),
+            "Venue", AttributeValue.builder().s(show.getVenue()).build(),
+            "Link", AttributeValue.builder().s(show.getLink()).build(),
+            "Location", AttributeValue.builder().s(show.getLocation()).build()
+        );
+
+        PutItemRequest putItemRequest = PutItemRequest.builder()
+            .tableName("Shows")
+            .item(item)
+            .build();
+
+        dynamoDbClient.putItem(putItemRequest);
     }
 
     private Show convertToModel(Map<String, AttributeValue> item) {

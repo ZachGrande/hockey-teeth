@@ -28,4 +28,8 @@ public class ShowService {
             .filter(show -> LocalDate.parse(show.getDate()).isAfter(LocalDate.now()))
             .collect(Collectors.toList());
     }
+
+    public void addShow(Show show) {
+        showsRepository.addShow(show);
+    }
 }

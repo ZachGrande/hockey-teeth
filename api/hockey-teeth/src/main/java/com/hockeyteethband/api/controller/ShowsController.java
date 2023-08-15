@@ -2,17 +2,19 @@ package com.hockeyteethband.api.controller;
 
 import com.hockeyteethband.api.model.Show;
 import com.hockeyteethband.api.service.ShowService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/shows")
 public class ShowsController {
+
+    private static final Logger logger = LoggerFactory.getLogger(ShowsController.class);
 
     private final ShowService showService;
 
@@ -30,5 +32,13 @@ public class ShowsController {
     public ResponseEntity<List<Show>> getAllUpcomingShows() {
         List<Show> shows = showService.getAllUpcomingShows();
         return new ResponseEntity<>(shows, HttpStatus.OK);
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<Void> addShow(@RequestBody Show show) {
+        logger.info("Adding show: {}", show);
+        showService.addShow(show);
+        logger.info("Show added successfully");
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }
