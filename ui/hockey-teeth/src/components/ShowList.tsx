@@ -4,15 +4,16 @@ import { ShowType } from '../data/Shows.types';
 
 interface IShowListProps {
   shows: ShowType[];
+  includeLink: boolean;
 }
 
-function ShowList({ shows }: IShowListProps) {
+function ShowList({ shows, includeLink }: IShowListProps) {
   return (
     <div>
       {shows.map(({
-        linkIncluded, location, link, date, venue,
+        location, link, date, venue,
       }) => {
-        const subHeader = linkIncluded
+        const subHeader = includeLink && link
           ? (
             <Typography variant="body1">
               {`${location} | `}

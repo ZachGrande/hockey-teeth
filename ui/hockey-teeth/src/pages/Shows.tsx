@@ -69,7 +69,7 @@ function Shows({ title, path }: IShowsProps) {
     <div>
       <Typography variant="h1">{title}</Typography>
       <br />
-      <ShowList shows={shows} />
+      <ShowList shows={shows} includeLink={path === 'upcoming'} />
     </div>
   );
 }
