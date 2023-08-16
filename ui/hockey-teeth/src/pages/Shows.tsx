@@ -13,7 +13,7 @@ interface IShowsProps {
 }
 
 function formatDate(inputDate: string) {
-  const date = new Date(inputDate);
+  const date = new Date(`${inputDate}T00:00:00`);
   const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
   return date.toLocaleDateString('en-US', options);
 }
