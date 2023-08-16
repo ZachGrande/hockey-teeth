@@ -17,7 +17,7 @@ const theme = createTheme({
   spacing: 4,
   typography: {
     fontSize: 12,
-    fontFamily: ['Playfair-Display', 'serif'].join(','),
+    fontFamily: ['Montserrat', 'serif'].join(','),
     h1: {
       fontFamily: ['Montserrat', 'sans-serif'].join(','),
       fontSize: 50,
@@ -30,7 +30,7 @@ const theme = createTheme({
       fontSize: 30,
     },
     h4: {
-      fontFamily: ['Playfair-Display', 'serif'].join(','),
+      fontFamily: ['Montserrat', 'serif'].join(','),
       fontSize: 20,
     },
     h5: {
