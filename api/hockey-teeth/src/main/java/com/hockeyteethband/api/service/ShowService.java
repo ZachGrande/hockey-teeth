@@ -17,6 +17,10 @@ public class ShowService {
         this.showsRepository = showsRepository;
     }
 
+    public List<Show> getAllShows() {
+        return showsRepository.getAllShows();
+    }
+
     public List<Show> getAllPastShows() {
         return showsRepository.getAllShows().stream()
             .filter(show -> LocalDate.parse(show.getDate()).isBefore(LocalDate.now()))
