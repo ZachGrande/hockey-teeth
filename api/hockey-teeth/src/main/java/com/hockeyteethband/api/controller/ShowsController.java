@@ -22,6 +22,12 @@ public class ShowsController {
         this.showService = showService;
     }
 
+    @GetMapping
+    public ResponseEntity<List<Show>> getAllShows() {
+        List<Show> shows = showService.getAllShows();
+        return new ResponseEntity<>(shows, HttpStatus.OK);
+    }
+
     @GetMapping("/past")
     public ResponseEntity<List<Show>> getAllPastShows() {
         List<Show> shows = showService.getAllPastShows();
