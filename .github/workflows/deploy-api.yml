@@ -1,0 +1,23 @@
+name: Deploy API for Production
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: [ "api/hockey-teeth/**" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      working-directory: api/hockey-teeth
+      run: |
+        ./gradlew build
+        docker-compose build
+
+    - name: Verify the Image
+      run: docker images
