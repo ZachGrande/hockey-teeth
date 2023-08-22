@@ -9,22 +9,15 @@ interface IShowsProps {
   path: string;
 }
 function Home({ title, path }: IShowsProps) {
-  const album1 = {
-    songName: 'Dialtone - Single',
-    coverURL: 'https://d19uxx92abk94f.cloudfront.net/album-covers/dialtone.png',
-    link: 'https://distrokid.com/hyperfollow/hockeyteeth/dialtone',
-  };
-  const album2 = {
+  const startAndDelay = {
     songName: 'Start and Delay - EP',
-    releaseDate: 'August 18',
     coverURL: 'https://d19uxx92abk94f.cloudfront.net/album-covers/start-and-delay.png',
     link: 'https://distrokid.com/hyperfollow/hockeyteeth/start-and-delay',
   };
 
   return (
     <div>
-      <NewReleaseMusic album={album2} />
-      <NewReleaseMusic album={album1} />
+      <NewReleaseMusic album={startAndDelay} />
       <NewReleaseVideo />
       <Shows title={title} path={path} />
       <Biography showAccolades={false} />
