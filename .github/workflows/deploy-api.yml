@@ -5,6 +5,10 @@ on:
     branches: [ "main" ]
     paths: [ "api/hockey-teeth/**" ]
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
 
   build-and-push:
