@@ -7,9 +7,10 @@ on:
 
 jobs:
 
-  build:
+  build-and-push:
 
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
     - uses: actions/checkout@v3
@@ -18,7 +19,7 @@ jobs:
         distribution: corretto
         java-version: 17
 
-    - name: Setup Gradle
+    - name: Set Up Gradle
       uses: gradle/gradle-build-action@2.4.2
       with:
         gradle-version: 8.2.1
@@ -31,3 +32,15 @@ jobs:
 
     - name: Verify the Image
       run: docker images
+
+    - name: Set Up AWS CLI
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-deploy
+        role-session-name: GitHub_to_AWS_via_FederatedOIDC
+        aws-region: us-west-2
+
+    - name: Tag and Push Image
+      run: |
+        docker tag hockeyteeth-api:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-west-2.amazonaws.com/hockeyteeth-api-production
+        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-west-2.amazonaws.com/hockeyteeth-api-production
