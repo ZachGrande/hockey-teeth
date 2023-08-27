@@ -37,6 +37,9 @@ jobs:
     - name: Verify the Image
       run: docker images
 
+    - name: Check Context
+      run: echo $GITHUB_REF
+
     - name: Set Up AWS CLI
       uses: aws-actions/configure-aws-credentials@v2
       with:
