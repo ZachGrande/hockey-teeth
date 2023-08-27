@@ -56,6 +56,6 @@ jobs:
         REPOSITORY: hockeyteeth-api-production
         IMAGE_TAG: latest
       run: |
-        aws sts get-caller-identity
+        echo $REPOSITORY
         docker tag REPOSITORY:$IMAGE_TAG $REGISTRY/$REPOSITORY
         docker push $REGISTRY/$REPOSITORY
