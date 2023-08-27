@@ -57,6 +57,6 @@ jobs:
 
     - name: Restart EC2
       run: |
-        echo ${{ secrets.SSH_PRIVATE_KEY }} > private_key.pem
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
         chmod 600 private_key.pem
         ssh -o StrictHostKeyChecking=no -i private_key.pem ec2-user@${{ vars.EC2_IP_ADDRESS }}.us-west-2.compute.amazonaws.com "sudo systemctl restart hockeyteeth-api-production.service"
