@@ -29,7 +29,7 @@ public class ShowService {
 
     public List<Show> getAllUpcomingShows() {
         return showsRepository.getAllShows().stream()
-            .filter(show -> LocalDate.parse(show.getDate()).isAfter(LocalDate.now()))
+            .filter(show -> LocalDate.parse(show.getDate()).isAfter(LocalDate.now().minusDays(1)))
             .collect(Collectors.toList());
     }
 
