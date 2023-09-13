@@ -24,12 +24,22 @@ public class ShowService {
     public List<Show> getAllPastShows() {
         return showsRepository.getAllShows().stream()
             .filter(show -> LocalDate.parse(show.getDate()).isBefore(LocalDate.now()))
+            .sorted((show1, show2) -> {
+                LocalDate date1 = LocalDate.parse(show1.getDate());
+                LocalDate date2 = LocalDate.parse(show2.getDate());
+                return date2.compareTo(date1);
+            })
             .collect(Collectors.toList());
     }
 
     public List<Show> getAllUpcomingShows() {
         return showsRepository.getAllShows().stream()
             .filter(show -> LocalDate.parse(show.getDate()).isAfter(LocalDate.now().minusDays(1)))
+            .sorted((show1, show2) -> {
+                LocalDate date1 = LocalDate.parse(show1.getDate());
+                LocalDate date2 = LocalDate.parse(show2.getDate());
+                return date1.compareTo(date2);
+            })
             .collect(Collectors.toList());
     }
 
