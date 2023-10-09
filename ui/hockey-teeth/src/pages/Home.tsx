@@ -18,8 +18,8 @@ function Home({ title, path }: IShowsProps) {
   return (
     <div>
       <NewReleaseMusic album={startAndDelay} />
-      <NewReleaseVideo />
       <Shows title={title} path={path} />
+      <NewReleaseVideo />
       <Biography showAccolades={false} />
     </div>
   );
