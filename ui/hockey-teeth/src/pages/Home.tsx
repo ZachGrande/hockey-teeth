@@ -11,7 +11,7 @@ interface IShowsProps {
 function Home({ title, path }: IShowsProps) {
   const startAndDelay = {
     songName: 'Start and Delay - EP',
-    coverURL: 'https://d19uxx92abk94f.cloudfront.net/album-covers/start-and-delay.png',
+    coverURL: 'https://d19uxx92abk94f.cloudfront.net/album-covers/start-and-delay.webp',
     link: 'https://distrokid.com/hyperfollow/hockeyteeth/start-and-delay',
   };
 
