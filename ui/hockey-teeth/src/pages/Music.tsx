@@ -7,32 +7,32 @@ function Music() {
   const albumCovers = [
     {
       title: 'Dialtone',
-      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/dialtone.png',
+      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/dialtone.webp',
       link: 'https://open.spotify.com/album/30yf09Y0X0GLDLQ6HiXP9z?si=j-tjTXdRREKCFI9Tv79mmA',
     },
     {
       title: 'Sick Of Me',
-      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/sick-of-me.png',
+      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/sick-of-me.webp',
       link: 'https://open.spotify.com/album/3M4Al1R2VKqZyARSmnnnA3?si=OpoCkQ1rS1ikAI-wFX7p4Q',
     },
     {
       title: 'Isolation',
-      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/isolation.png',
+      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/isolation.webp',
       link: 'https://open.spotify.com/album/6FHDPRswuYZTjgWlE92GKB?si=wttIz5MURbuAvoBTwFtFWw',
     },
     {
       title: 'Go There',
-      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/go-there.png',
+      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/go-there.webp',
       link: 'https://open.spotify.com/album/3aHOEbn6pnehWmSSbui41f?si=mfYcGhnMQdyLaVZAC77Z4A',
     },
     {
       title: 'Edelweiss',
-      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/edelweiss.png',
+      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/edelweiss.webp',
       link: 'https://open.spotify.com/album/74Qi9mrHRNBcQiwsMstymN?si=szrnb83HS2CxioR8fMZ4Gg',
     },
     {
       title: 'Apt',
-      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/apt.png',
+      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/apt.webp',
       link: 'https://open.spotify.com/album/1wI8wJu5xP8R52Y4oITx7s?si=8SXZACKzSwmZb7Sbnnm-jA',
     },
   ];
