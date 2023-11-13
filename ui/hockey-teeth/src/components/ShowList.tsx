@@ -11,9 +11,7 @@ function ShowList({ shows, includeLink }: IShowListProps) {
   if (shows.length === 0) {
     return (
       <div>
-        <div className="show-item">
-          <Typography variant="h4">New shows coming soon!</Typography>
-        </div>
+        <Typography variant="h4">New shows coming soon!</Typography>
         <br />
       </div>
     );
