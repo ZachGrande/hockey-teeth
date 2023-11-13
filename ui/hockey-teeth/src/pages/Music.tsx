@@ -6,6 +6,11 @@ import {
 function Music() {
   const albumCovers = [
     {
+      title: 'Start and Delay',
+      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/start-and-delay.webp',
+      link: 'https://open.spotify.com/album/7LNvirnCmKhcQ5583y9nYQ?si=EV7wAiOzT8GaT7WnmMuYkQ',
+    },
+    {
       title: 'Dialtone',
       image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/dialtone.webp',
       link: 'https://open.spotify.com/album/30yf09Y0X0GLDLQ6HiXP9z?si=j-tjTXdRREKCFI9Tv79mmA',
@@ -39,6 +44,21 @@ function Music() {
   return (
     <>
       <Stack spacing={2}>
+        <Grid item xs={6}>
+          <iframe
+            style={{
+              borderRadius: '12px',
+              border: '0px',
+            }}
+            src="https://open.spotify.com/embed/album/7LNvirnCmKhcQ5583y9nYQ?utm_source=generator"
+            title="Start and Delay"
+            width="90%"
+            height="352"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </Grid>
         <Grid item xs={6}>
           <iframe
             style={{
