@@ -8,6 +8,14 @@ interface IShowListProps {
 }
 
 function ShowList({ shows, includeLink }: IShowListProps) {
+  if (shows.length === 0) {
+    return (
+      <div>
+        <Typography variant="h4">New shows coming soon!</Typography>
+        <br />
+      </div>
+    );
+  }
   return (
     <div>
       {shows.map(({
