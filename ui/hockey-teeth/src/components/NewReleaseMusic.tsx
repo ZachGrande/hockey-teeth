@@ -57,7 +57,7 @@ function NewReleaseVideo({ album }: INewReleaseVideoProps) {
           </Typography>
           <Button variant="contained" href={album.link} target="_blank" rel="noreferrer" sx={{ mt: 2 }}>
             <Typography variant="h6">
-              {album.releaseDate ? 'PRESALE' : 'OUT NOW'}
+              {album.releaseDate ? 'PRESAVE' : 'OUT NOW'}
             </Typography>
           </Button>
         </CardContent>

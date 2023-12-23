@@ -9,15 +9,16 @@ interface IShowsProps {
   path: string;
 }
 function Home({ title, path }: IShowsProps) {
-  const startAndDelay = {
-    songName: 'Start and Delay - EP',
-    coverURL: 'https://d19uxx92abk94f.cloudfront.net/album-covers/start-and-delay.webp',
-    link: 'https://distrokid.com/hyperfollow/hockeyteeth/start-and-delay',
+  const bigRed = {
+    songName: 'Big Red - Single',
+    coverURL: 'https://d19uxx92abk94f.cloudfront.net/album-covers/big-red.webp',
+    link: 'https://distrokid.com/hyperfollow/hockeyteeth/big-red',
+    releaseDate: 'January 12',
   };
 
   return (
     <div>
-      <NewReleaseMusic album={startAndDelay} />
+      <NewReleaseMusic album={bigRed} />
       <Shows title={title} path={path} />
       <NewReleaseVideo />
       <Biography showAccolades={false} />
