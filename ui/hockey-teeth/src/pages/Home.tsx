@@ -13,7 +13,6 @@ function Home({ title, path }: IShowsProps) {
     songName: 'Big Red - Single',
     coverURL: 'https://d19uxx92abk94f.cloudfront.net/album-covers/big-red.webp',
     link: 'https://distrokid.com/hyperfollow/hockeyteeth/big-red',
-    releaseDate: 'January 12',
   };
 
   return (
