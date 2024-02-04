@@ -4,7 +4,7 @@ import React from 'react';
 function Videos() {
   return (
     <>
-      <Typography variant="h1">Roll Up Music Video Out Now!</Typography>
+      <Typography variant="h1">Big Red (Live) Out Now!</Typography>
       <br />
       <div style={{
         position: 'relative',
@@ -19,7 +19,7 @@ function Videos() {
           width="90%"
           height="90%"
           title="Sick Of Me"
-          src="https://www.youtube.com/embed/FnDCfOJUN0g"
+          src="https://www.youtube.com/embed/Uw29IU4BR-s?si=cW1cl88LVjsmALa0"
           style={{
             position: 'absolute',
           }}
