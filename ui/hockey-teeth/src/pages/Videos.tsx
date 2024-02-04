@@ -4,6 +4,10 @@ import React from 'react';
 function Videos() {
   const videos = [
     {
+      title: 'Big Red (Live)',
+      link: 'https://www.youtube.com/embed/Uw29IU4BR-s',
+    },
+    {
       title: 'Roll Up',
       link: 'https://www.youtube.com/embed/FnDCfOJUN0g',
     },

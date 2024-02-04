@@ -19,7 +19,7 @@ function Videos() {
           width="90%"
           height="90%"
           title="Sick Of Me"
-          src="https://www.youtube.com/embed/Uw29IU4BR-s?si=cW1cl88LVjsmALa0"
+          src="https://www.youtube.com/embed/Uw29IU4BR-s"
           style={{
             position: 'absolute',
           }}
