@@ -10,9 +10,10 @@ interface IShowsProps {
 }
 function Home({ title, path }: IShowsProps) {
   const bigRed = {
-    songName: 'Big Red - Single',
-    coverURL: 'https://d19uxx92abk94f.cloudfront.net/album-covers/big-red.webp',
-    link: 'https://distrokid.com/hyperfollow/hockeyteeth/big-red',
+    songName: 'Tired Of Being Tough - Single',
+    coverURL: 'https://d19uxx92abk94f.cloudfront.net/album-covers/tired-of-being-tough.webp',
+    link: 'https://distrokid.com/hyperfollow/hockeyteeth/tired-of-being-tough',
+    releaseDate: 'September 27',
   };
 
   return (
