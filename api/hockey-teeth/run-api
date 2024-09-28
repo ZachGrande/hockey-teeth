@@ -2,9 +2,6 @@
 
 set -e
 
-# Build the API
-./gradlew build || exit 1
-
 # Close current docker containers
 docker-compose down || exit 1
 
