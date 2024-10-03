@@ -7,6 +7,11 @@ function Music() {
   const albumCovers = [
     {
       title: 'Big Red',
+      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/tired-of-being-tough.webp',
+      link: 'https://open.spotify.com/album/18BTO15qtw5XmgxYxHCXCF?si=l_RRyeBrRaqFx9aflFYIgg',
+    },
+    {
+      title: 'Big Red',
       image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/big-red.webp',
       link: 'https://open.spotify.com/album/5SyI4HOtaQtAC9WMdoMbdi?si=D5feRBLFSeGRBwwjI3lMgg',
     },
