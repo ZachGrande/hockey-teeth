@@ -60,6 +60,21 @@ function Music() {
               borderRadius: '12px',
               border: '0px',
             }}
+            src="https://open.spotify.com/embed/album/18BTO15qtw5XmgxYxHCXCF?utm_source=generator"
+            title="Tired Of Being Tough"
+            width="90%"
+            height="152"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <iframe
+            style={{
+              borderRadius: '12px',
+              border: '0px',
+            }}
             src="https://open.spotify.com/embed/track/1fiXIA7GMOswDQmbgEQ6lr?utm_source=generator"
             title="Big Red"
             width="90%"
