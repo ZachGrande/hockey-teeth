@@ -7,6 +7,11 @@ function Music() {
   const albumCovers = [
     {
       title: 'Big Red',
+      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/tired-of-being-tough.webp',
+      link: 'https://open.spotify.com/album/18BTO15qtw5XmgxYxHCXCF?si=l_RRyeBrRaqFx9aflFYIgg',
+    },
+    {
+      title: 'Big Red',
       image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/big-red.webp',
       link: 'https://open.spotify.com/album/5SyI4HOtaQtAC9WMdoMbdi?si=D5feRBLFSeGRBwwjI3lMgg',
     },
@@ -49,6 +54,21 @@ function Music() {
   return (
     <>
       <Stack spacing={2}>
+        <Grid item xs={6}>
+          <iframe
+            style={{
+              borderRadius: '12px',
+              border: '0px',
+            }}
+            src="https://open.spotify.com/embed/album/18BTO15qtw5XmgxYxHCXCF?utm_source=generator"
+            title="Tired Of Being Tough"
+            width="90%"
+            height="152"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </Grid>
         <Grid item xs={6}>
           <iframe
             style={{
