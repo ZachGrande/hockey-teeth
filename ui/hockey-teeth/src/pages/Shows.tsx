@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import Papa from 'papaparse';
 import { Typography } from '@mui/material';
-import axios from 'axios';
 import ShowList from '../components/ShowList';
 import Loading from '../components/Loading';
 import ErrorAPI from '../components/ErrorAPI';
 import { ShowType } from '../data/Shows.types';
-import config from '../config';
 
-interface IShowsProps {
+export interface IShowsProps {
   title: string;
-  path: string;
+  isUpcoming: boolean;
 }
 
 function formatDate(inputDate: string) {
@@ -18,24 +17,52 @@ function formatDate(inputDate: string) {
   return date.toLocaleDateString('en-US', options);
 }
 
-function Shows({ title, path }: IShowsProps) {
+function removeQuotes(inputString: string) {
+  return inputString.replace(/['"]+/g, '');
+}
+
+function Shows({ title, isUpcoming }: IShowsProps) {
   const [shows, setShows] = useState<ShowType[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    axios.get(`${config.api.apiUrl}/shows/${path}`)
-      .then((response) => {
-        if (response.status !== 200) {
-          throw new Error('Error fetching top tracks');
-        }
-        const formattedData = response.data.map((show: ShowType) => ({
-          ...show,
-          date: formatDate(show.date),
-        }));
+    fetch('/shows.csv')
+      .then((response) => response.text())
+      .then((csvText) => {
+        Papa.parse(csvText, {
+          header: true,
+          complete: (result: { data: ShowType[]; }) => {
+            const formattedData = result.data.map((show: ShowType) => ({
+              ...show,
+              date: formatDate(show.date),
+              location: removeQuotes(show.location),
+            }));
 
-        setShows(formattedData);
-        setLoading(false);
+            const filteredData = formattedData.filter((show: ShowType) => {
+              const showDate = new Date(show.date);
+              const today = new Date();
+              // Offset by 1 day to adjust for the show date beginning at T00:00:00
+              today.setDate(today.getDate() - 1);
+              return isUpcoming ? showDate >= today : showDate < today;
+            });
+
+            const sortedData = filteredData.sort((a, b) => {
+              const dateA = new Date(a.date);
+              const dateB = new Date(b.date);
+              return isUpcoming
+                ? dateA.getTime() - dateB.getTime()
+                : dateB.getTime() - dateA.getTime();
+            });
+
+            setShows(sortedData);
+            setLoading(false);
+          },
+          error: () => {
+            setError(true);
+            setLoading(false);
+          },
+        });
       })
       .catch(() => {
         setError(true);
@@ -57,7 +84,7 @@ function Shows({ title, path }: IShowsProps) {
     <div>
       <Typography variant="h1">{title}</Typography>
       <br />
-      <ShowList shows={shows} includeLink={path === 'upcoming'} />
+      <ShowList shows={shows} includeLink={isUpcoming} />
     </div>
   );
 }

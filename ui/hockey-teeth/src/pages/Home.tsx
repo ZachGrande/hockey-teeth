@@ -1,14 +1,10 @@
 import React from 'react';
-import Shows from './Shows';
+import Shows, { IShowsProps } from './Shows';
 import Biography from './Biography';
 import NewReleaseVideo from '../components/NewReleaseVideo';
 import NewReleaseMusic from '../components/NewReleaseMusic';
 
-interface IShowsProps {
-  title: string;
-  path: string;
-}
-function Home({ title, path }: IShowsProps) {
+function Home({ title, isUpcoming }: IShowsProps) {
   const bigRed = {
     songName: 'Tired Of Being Tough - Single',
     coverURL: 'https://d19uxx92abk94f.cloudfront.net/album-covers/tired-of-being-tough.webp',
@@ -17,7 +13,7 @@ function Home({ title, path }: IShowsProps) {
 
   return (
     <div>
-      <Shows title={title} path={path} />
+      <Shows title={title} isUpcoming={isUpcoming} />
       <NewReleaseMusic album={bigRed} />
       <NewReleaseVideo />
       <Biography showAccolades={false} />
