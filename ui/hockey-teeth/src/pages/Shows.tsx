@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import Papa from 'papaparse';
 import { Typography } from '@mui/material';
-import axios from 'axios';
 import ShowList from '../components/ShowList';
 import Loading from '../components/Loading';
 import ErrorAPI from '../components/ErrorAPI';
 import { ShowType } from '../data/Shows.types';
-import config from '../config';
 
 interface IShowsProps {
   title: string;
@@ -18,24 +17,35 @@ function formatDate(inputDate: string) {
   return date.toLocaleDateString('en-US', options);
 }
 
+function removeQuotes(inputString: string) {
+  return inputString.replace(/['"]+/g, '');
+}
+
 function Shows({ title, path }: IShowsProps) {
   const [shows, setShows] = useState<ShowType[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    axios.get(`${config.api.apiUrl}/shows/${path}`)
-      .then((response) => {
-        if (response.status !== 200) {
-          throw new Error('Error fetching top tracks');
-        }
-        const formattedData = response.data.map((show: ShowType) => ({
-          ...show,
-          date: formatDate(show.date),
-        }));
-
-        setShows(formattedData);
-        setLoading(false);
+    fetch('/shows.csv')
+      .then((response) => response.text())
+      .then((csvText) => {
+        Papa.parse(csvText, {
+          header: true,
+          complete: (result: { data: ShowType[]; }) => {
+            const formattedData = result.data.map((show: ShowType) => ({
+              ...show,
+              date: formatDate(show.date),
+              location: removeQuotes(show.location),
+            }));
+            setShows(formattedData);
+            setLoading(false);
+          },
+          error: () => {
+            setError(true);
+            setLoading(false);
+          },
+        });
       })
       .catch(() => {
         setError(true);
