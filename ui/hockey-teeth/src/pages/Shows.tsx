@@ -6,9 +6,9 @@ import Loading from '../components/Loading';
 import ErrorAPI from '../components/ErrorAPI';
 import { ShowType } from '../data/Shows.types';
 
-interface IShowsProps {
+export interface IShowsProps {
   title: string;
-  path: string;
+  isUpcoming: boolean;
 }
 
 function formatDate(inputDate: string) {
@@ -21,7 +21,7 @@ function removeQuotes(inputString: string) {
   return inputString.replace(/['"]+/g, '');
 }
 
-function Shows({ title, path }: IShowsProps) {
+function Shows({ title, isUpcoming }: IShowsProps) {
   const [shows, setShows] = useState<ShowType[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -38,7 +38,24 @@ function Shows({ title, path }: IShowsProps) {
               date: formatDate(show.date),
               location: removeQuotes(show.location),
             }));
-            setShows(formattedData);
+
+            const filteredData = formattedData.filter((show: ShowType) => {
+              const showDate = new Date(show.date);
+              const today = new Date();
+              // Offset by 1 day to adjust for the show date beginning at T00:00:00
+              today.setDate(today.getDate() - 1);
+              return isUpcoming ? showDate >= today : showDate < today;
+            });
+
+            const sortedData = filteredData.sort((a, b) => {
+              const dateA = new Date(a.date);
+              const dateB = new Date(b.date);
+              return isUpcoming
+                ? dateA.getTime() - dateB.getTime()
+                : dateB.getTime() - dateA.getTime();
+            });
+
+            setShows(sortedData);
             setLoading(false);
           },
           error: () => {
@@ -67,7 +84,7 @@ function Shows({ title, path }: IShowsProps) {
     <div>
       <Typography variant="h1">{title}</Typography>
       <br />
-      <ShowList shows={shows} includeLink={path === 'upcoming'} />
+      <ShowList shows={shows} includeLink={isUpcoming} />
     </div>
   );
 }
