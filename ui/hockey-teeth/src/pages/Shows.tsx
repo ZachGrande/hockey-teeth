@@ -16,10 +16,6 @@ function formatDate(inputDate: string) {
   return date.toLocaleDateString('en-US', options);
 }
 
-function removeQuotes(inputString: string) {
-  return inputString.replace(/['"]+/g, '');
-}
-
 function Shows({ title, isUpcoming }: IShowsProps) {
   const [shows, setShows] = useState<ShowType[]>([]);
   const [loading, setLoading] = useState(true);
@@ -29,7 +25,7 @@ function Shows({ title, isUpcoming }: IShowsProps) {
       date: formatDate(show.date),
       venue: show.venue,
       link: show.link,
-      location: removeQuotes(show.location),
+      location: show.location,
     }));
 
     const filteredData = formattedData.filter((show: ShowType) => {
