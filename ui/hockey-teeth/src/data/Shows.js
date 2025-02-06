@@ -12,10 +12,22 @@ const data = [
     location: 'Seattle, WA',
   },
   {
+    date: '2025-03-01',
+    venue: 'Sunset Tavern',
+    link: 'https://dice.fm/partner/dice/event/3omvrl-hockey-teeth-waltzerr-die-right-1st-mar-the-sunset-tavern-seattle-tickets',
+    location: 'Seattle, WA',
+  },
+  {
     date: '2025-02-28',
     venue: 'Twilight Cafe & Bar',
-    link: '',
+    link: 'https://tickets.holdmyticket.com/tickets/443201?_ga=2.247524487.1025517197.1738815357-1565952513.1738815357',
     location: 'Portland, OR',
+  },
+  {
+    date: '2025-02-22',
+    venue: 'The Blue Room',
+    link: 'https://www.blueroombham.com/tickets#/events',
+    location: 'Bellingham, WA',
   },
   {
     date: '2025-01-18',
