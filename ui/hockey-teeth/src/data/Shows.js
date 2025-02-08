@@ -26,7 +26,7 @@ const data = [
   {
     date: '2025-02-22',
     venue: 'The Blue Room',
-    link: 'https://www.blueroombham.com/tickets#/events',
+    link: 'https://www.venuepilot.co/events/120878/orders/new',
     location: 'Bellingham, WA',
   },
   {
