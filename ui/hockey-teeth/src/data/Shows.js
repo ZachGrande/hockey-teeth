@@ -6,12 +6,6 @@ const data = [
     location: 'Seattle, WA',
   },
   {
-    date: '2025-03-07',
-    venue: 'Blue Moon Tavern',
-    link: '',
-    location: 'Seattle, WA',
-  },
-  {
     date: '2025-03-01',
     venue: 'Sunset Tavern',
     link: 'https://dice.fm/partner/dice/event/3omvrl-hockey-teeth-waltzerr-die-right-1st-mar-the-sunset-tavern-seattle-tickets',
