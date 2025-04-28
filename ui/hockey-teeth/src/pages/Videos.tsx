@@ -4,6 +4,14 @@ import React from 'react';
 function Videos() {
   const videos = [
     {
+      title: 'Big Red (Live at The Sunset Tavern)',
+      link: 'https://www.youtube.com/embed/JcHOBLHW9HY',
+    },
+    {
+      title: 'Tired Of Being Tough',
+      link: 'https://www.youtube.com/embed/0ip_Mz7b0NM',
+    },
+    {
       title: 'Big Red (Live)',
       link: 'https://www.youtube.com/embed/Uw29IU4BR-s',
     },
