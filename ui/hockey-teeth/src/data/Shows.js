@@ -1,5 +1,35 @@
 const data = [
   {
+    date: '2025-08-08',
+    venue: 'South Lake Union Block Party',
+    link: '',
+    location: 'Seattle, WA',
+  },
+  {
+    date: '2025-07-19',
+    venue: 'Capitol Hill Block Party',
+    link: 'https://www.capitolhillblockparty.com/tickets',
+    location: 'Seattle, WA',
+  },
+  {
+    date: '2025-05-30',
+    venue: 'Conor Byrne Pub',
+    link: 'https://www.venuepilot.co/events/caspian-coberly-with-hockey-teeth-album-release-hi-crime-2025-05-30-conor-byrne-cooperative-seattle-9f10af/orders/new',
+    location: 'Seattle, WA',
+  },
+  {
+    date: '2025-05-03',
+    venue: 'The Blue Room',
+    link: 'https://www.blueroombham.com/tickets#/events',
+    location: 'Bellingham, WA',
+  },
+  {
+    date: '2025-04-25',
+    venue: 'Sam Bond\'s Garage',
+    link: '',
+    location: 'Eugene, OR',
+  },
+  {
     date: '2025-03-23',
     venue: 'Central Saloon',
     link: '',
