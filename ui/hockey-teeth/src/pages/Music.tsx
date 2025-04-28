@@ -6,7 +6,12 @@ import {
 function Music() {
   const albumCovers = [
     {
-      title: 'Big Red',
+      title: 'Food for Thought',
+      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/food-for-thought.webp',
+      link: 'https://open.spotify.com/album/7hsBXKtZ30cQKTj8AUEc2C?si=e8oVNa8xT12D-WyIgPZEng',
+    },
+    {
+      title: 'Tired of Being Tough',
       image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/tired-of-being-tough.webp',
       link: 'https://open.spotify.com/album/18BTO15qtw5XmgxYxHCXCF?si=l_RRyeBrRaqFx9aflFYIgg',
     },
@@ -54,6 +59,21 @@ function Music() {
   return (
     <>
       <Stack spacing={2}>
+        <Grid item xs={6}>
+          <iframe
+            style={{
+              borderRadius: '12px',
+              border: '0px',
+            }}
+            src="https://open.spotify.com/embed/album/7hsBXKtZ30cQKTj8AUEc2C?utm_source=generator"
+            title="Food for Thought"
+            width="90%"
+            height="152"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </Grid>
         <Grid item xs={6}>
           <iframe
             style={{

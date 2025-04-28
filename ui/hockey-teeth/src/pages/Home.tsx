@@ -5,16 +5,17 @@ import NewReleaseVideo from '../components/NewReleaseVideo';
 import NewReleaseMusic from '../components/NewReleaseMusic';
 
 function Home({ title, isUpcoming }: IShowsProps) {
-  const bigRed = {
-    songName: 'Tired Of Being Tough - Single',
-    coverURL: 'https://d19uxx92abk94f.cloudfront.net/album-covers/tired-of-being-tough.webp',
-    link: 'https://distrokid.com/hyperfollow/hockeyteeth/tired-of-being-tough',
+  const newMusic = {
+    songName: 'Cut Your Teeth',
+    releaseDate: 'May 30, 2025',
+    coverURL: 'https://d19uxx92abk94f.cloudfront.net/album-covers/cut-your-teeth.webp',
+    link: 'https://distrokid.com/hyperfollow/hockeyteeth/cut-your-teeth',
   };
 
   return (
     <div>
       <Shows title={title} isUpcoming={isUpcoming} />
-      <NewReleaseMusic album={bigRed} />
+      <NewReleaseMusic album={newMusic} />
       <NewReleaseVideo />
       <Biography showAccolades={false} />
     </div>
