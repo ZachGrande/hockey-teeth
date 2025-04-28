@@ -6,7 +6,7 @@ import {
 function Music() {
   const albumCovers = [
     {
-      title: 'Big Red',
+      title: 'Tired of Being Tough',
       image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/tired-of-being-tough.webp',
       link: 'https://open.spotify.com/album/18BTO15qtw5XmgxYxHCXCF?si=l_RRyeBrRaqFx9aflFYIgg',
     },
