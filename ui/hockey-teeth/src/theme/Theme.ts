@@ -19,26 +19,26 @@ const theme = createTheme({
     fontSize: 12,
     fontFamily: ['Montserrat', 'serif'].join(','),
     h1: {
-      fontFamily: ['Montserrat', 'sans-serif'].join(','),
+      fontFamily: ['Libre Baskerville', 'sans-serif'].join(','),
       fontSize: 50,
     },
     h2: {
-      fontFamily: ['Montserrat', 'sans-serif'].join(','),
+      fontFamily: ['Libre Baskerville', 'sans-serif'].join(','),
     },
     h3: {
-      fontFamily: ['Montserrat', 'sans-serif'].join(','),
+      fontFamily: ['Libre Baskerville', 'sans-serif'].join(','),
       fontSize: 30,
     },
     h4: {
-      fontFamily: ['Montserrat', 'serif'].join(','),
+      fontFamily: ['Libre Baskerville', 'serif'].join(','),
       fontSize: 20,
     },
     h5: {
-      fontFamily: ['Montserrat', 'sans-serif'].join(','),
+      fontFamily: ['Libre Baskerville', 'sans-serif'].join(','),
       fontSize: 20,
     },
     h6: {
-      fontFamily: ['Montserrat', 'sans-serif'].join(','),
+      fontFamily: ['Libre Baskerville', 'sans-serif'].join(','),
       fontSize: 10,
     },
   },
