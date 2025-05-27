@@ -11,6 +11,10 @@ function MenuBar() {
       route: '/home',
     },
     {
+      title: 'Music',
+      route: '/music',
+    },
+    {
       title: 'Videos',
       route: '/videos',
     },
@@ -19,16 +23,8 @@ function MenuBar() {
       route: '/past-shows',
     },
     {
-      title: 'In The News',
-      route: '/news',
-    },
-    {
-      title: 'Bio',
+      title: 'About',
       route: '/bio',
-    },
-    {
-      title: 'Music',
-      route: '/music',
     },
   ];
 
