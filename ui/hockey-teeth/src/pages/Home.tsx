@@ -14,8 +14,8 @@ function Home({ title, isUpcoming }: IShowsProps) {
 
   return (
     <div>
-      <Shows title={title} isUpcoming={isUpcoming} />
       <NewReleaseMusic album={newMusic} />
+      <Shows title={title} isUpcoming={isUpcoming} />
       <NewReleaseVideo />
       <Biography showAccolades={false} />
     </div>
