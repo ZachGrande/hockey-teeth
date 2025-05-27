@@ -19,7 +19,7 @@ function SiteRouter() {
         <Route path="videos" element={<Videos />} />
         <Route path="past-shows" element={<Shows title="Past Shows" isUpcoming={false} />} />
         <Route path="news" element={<News />} />
-        <Route path="bio" element={<Biography showAccolades />} />
+        <Route path="bio" element={<Biography showAccolades={false} />} />
         <Route path="music" element={<Music />} />
       </Route>
       <Route element={<AdminLayout />}>

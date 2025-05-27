@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Container } from '@mui/material';
 import { withAuthenticationRequired } from '@auth0/auth0-react';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.svg';
 
 function AdminLayout() {
   return (

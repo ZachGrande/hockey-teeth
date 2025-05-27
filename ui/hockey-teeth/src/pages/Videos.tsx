@@ -1,8 +1,15 @@
-import { Typography } from '@mui/material';
 import React from 'react';
 
 function Videos() {
   const videos = [
+    {
+      title: 'Big Red (Live on Art Zone)',
+      link: 'https://www.youtube.com/embed/kbU2WG9gzSs',
+    },
+    {
+      title: 'Food for Thought',
+      link: 'https://www.youtube.com/embed/oM4hGOilvFk',
+    },
     {
       title: 'Big Red (Live at The Sunset Tavern)',
       link: 'https://www.youtube.com/embed/JcHOBLHW9HY',
@@ -51,7 +58,6 @@ function Videos() {
 
   return (
     <>
-      <Typography variant="h1">Videos</Typography>
       {videos.map((data) => (
         <div
           key={data.title}

@@ -61,6 +61,7 @@ function Footer() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
+          pb: 5,
         }}
       >
         {social.map((data) => (

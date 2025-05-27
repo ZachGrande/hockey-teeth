@@ -1,5 +1,7 @@
 import React from 'react';
-import { Grid, Link, useTheme } from '@mui/material';
+import {
+  Grid, Link, useTheme, Box,
+} from '@mui/material';
 import { useLocation, Link as RouterLink } from 'react-router-dom';
 
 function MenuBar() {
@@ -11,6 +13,10 @@ function MenuBar() {
       route: '/home',
     },
     {
+      title: 'Music',
+      route: '/music',
+    },
+    {
       title: 'Videos',
       route: '/videos',
     },
@@ -19,43 +25,38 @@ function MenuBar() {
       route: '/past-shows',
     },
     {
-      title: 'In The News',
-      route: '/news',
-    },
-    {
-      title: 'Bio',
+      title: 'About',
       route: '/bio',
-    },
-    {
-      title: 'Music',
-      route: '/music',
     },
   ];
 
   return (
-    <Grid
-      container
-      rowSpacing={1}
-      justifyContent="center"
-      columns={{ xs: 4, sm: 8, md: 12 }}
-      sx={{ marginBottom: theme.spacing(8) }}
-    >
-      {menu.map((data) => (
-        <Grid item xs={6} key={data.title}>
-          <Link
-            to={data.route}
-            variant="h3"
-            underline="none"
-            component={RouterLink}
-            color={location.pathname === data.route
-              ? theme.palette.text.primary
-              : theme.palette.text.secondary}
-          >
-            {data.title}
-          </Link>
-        </Grid>
-      ))}
-    </Grid>
+    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+      <Grid
+        container
+        rowSpacing={1}
+        sx={{
+          justifyContent: 'center',
+          maxWidth: 'sm',
+        }}
+      >
+        {menu.map((data) => (
+          <Grid item xs={6} key={data.title}>
+            <Link
+              to={data.route}
+              variant="h3"
+              underline="none"
+              component={RouterLink}
+              color={location.pathname === data.route
+                ? theme.palette.text.primary
+                : theme.palette.text.secondary}
+            >
+              {data.title}
+            </Link>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   );
 }
 
