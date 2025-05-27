@@ -17,18 +17,21 @@ function NewReleaseVideo({ album }: INewReleaseVideoProps) {
 
   return (
     <Container
+      maxWidth="xs"
+      disableGutters={false}
       sx={{
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        mt: '25px',
+        mt: 10,
+        mb: 5,
       }}
     >
       <Card
         sx={{
           borderRadius: '15px',
           overflow: 'visible',
-          width: '50%',
+          width: '75%',
           mb: '25px',
           backgroundColor: '#F3F3F3',
           boxShadow: 3,
@@ -38,7 +41,7 @@ function NewReleaseVideo({ album }: INewReleaseVideoProps) {
           component="img"
           sx={{
             height: 'auto',
-            width: '50%',
+            width: '75%',
             position: 'relative',
             top: '-25px',
             mb: '-25px',
