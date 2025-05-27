@@ -89,7 +89,7 @@ function Biography({ showAccolades }: IBiographyProps) {
           style={{
             position: 'absolute',
           }}
-          src="https://d19uxx92abk94f.cloudfront.net/band-photos/cover.webp"
+          src="https://d19uxx92abk94f.cloudfront.net/band-photos/cover-2025-05-26.webp"
           alt="cover"
         />
       </div>
