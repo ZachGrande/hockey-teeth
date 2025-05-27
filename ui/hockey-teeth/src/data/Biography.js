@@ -1,9 +1,8 @@
 const biography = [
-  'Hockey Teeth is like every band you\'ve ever heard before, just better and with catchier songs. Hockey Teeth has been compared to Hippo Campus, Phoenix, Elvis Costello, and even Sugar Ray.',
-  'Combining the high energy of modern rock live performance with the catchy melodies of traditional mid 60s pop, Hockey Teeth brings a fresh take at the classic power pop genre.',
-  'Formed in 2019 while cleaning dishes at the Ridgeway commons, Hockey Teeth has always felt like a lucky, chance meeting between members Riley Adair, Joey Boone, Owen Rollison, and Zach Grande. Having strong support from the local music scene in Bellingham, WA from the beginning, Hockey Teeth won Western Washington University\'s 2020 Sounds of the Underground battle of the bands as only their third show. ',
-  'Since relocating to Seattle, Hockey Teeth released their second self-recorded EP Start & Delay summer 2023 and have began to embed themselves in the local music scene. They have had the pleasure of sharing the stage with established acts such as Mr Twin Sister, Water From Your Eyes, Naked Giants, Argonaut & Wasp, and Acid Tongue.',
-  'Please welcome their newest single, Big Red, Seattle’s first ever song about thrifting. Big Red is energetic, catchy, and unlike anything you’ve ever heard. Big Red is about a big red sweater. It’s the perfect song to dance alone to in your room while the weather outside is frightening.',
+  'Hockey Teeth is a Seattle-based power pop band blending the high energy of modern rock with the catchy melodies of mid-60s pop. Their music offers a fresh and infectious take on the classic power pop sound, drawing comparisons to Phoenix, Elvis Costello, Hippo Campus, and Wilco.',
+  'Formed in 2019 in the dish room at Western Washington University\'s Ridgeway Commons, the band began when Riley Adair and Joey Boone bonded over their love of music. Riley brought in classmate Owen Rollison, and the three immediately started writing songs together. Joey later welcomed childhood best friend Zach Grande into the band in 2021 to complete the lineup.',
+  'Hockey Teeth quickly gained traction in the Bellingham, WA music scene, winning Western Washington University’s Battle of the Bands in only their third show. Since then, they’ve played numerous festivals including Capitol Hill Block Party and Bellingham Arts and Music Festival, and have opened for acts like Mr Twin Sister, Naked Giants, Water From Your Eyes, Argonaut & Wasp, and Acid Tongue.',
+  'Now based in Seattle, the band continues to build momentum with their debut full-length album, \'Cut Your Teeth\' (2025).',
 ];
 
 export default biography;
