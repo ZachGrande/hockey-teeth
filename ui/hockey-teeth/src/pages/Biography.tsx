@@ -27,45 +27,41 @@ function Biography({ showAccolades }: IBiographyProps) {
   const images = [
     {
       title: 'Photo 1',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-01.webp',
+      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-01-2025-05-26.webp',
       cols: 2,
       rows: 1,
-      width: '10px',
     },
     {
       title: 'Photo 2',
       image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-02.webp',
       cols: 2,
       rows: 2,
-      width: '64px',
+      height: '345px',
     },
     {
       title: 'Photo 3',
       image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-03.webp',
       cols: 2,
       rows: 2,
-      width: '64px',
     },
     {
       title: 'Photo 4',
       image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-04.webp',
       cols: 1,
       rows: 2,
-      width: '64px',
     },
     {
       title: 'Photo 5',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-05.webp',
+      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-05-2025-05-26.webp',
       cols: 1,
       rows: 2,
-      width: '64px',
+      height: '339px',
     },
     {
       title: 'Photo 6',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-06.webp',
+      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-06-2025-05-26.webp',
       cols: 2,
       rows: 1,
-      width: '64px',
     },
   ];
 
@@ -119,6 +115,9 @@ function Biography({ showAccolades }: IBiographyProps) {
               src={item.image}
               alt={item.title}
               loading="lazy"
+              style={{
+                height: item.height || 'auto',
+              }}
             />
           </ImageListItem>
         ))}
