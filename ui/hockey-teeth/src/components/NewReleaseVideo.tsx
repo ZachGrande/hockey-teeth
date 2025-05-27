@@ -4,7 +4,7 @@ import React from 'react';
 function Videos() {
   return (
     <>
-      <Typography variant="h1">Big Red (Live at The Sunset Tavern)</Typography>
+      <Typography variant="h3">Food for Thought (Live on Art Zone)</Typography>
       <br />
       <div style={{
         position: 'relative',
@@ -18,8 +18,8 @@ function Videos() {
         <iframe
           width="90%"
           height="90%"
-          title="Big Red Live"
-          src="https://www.youtube.com/embed/JcHOBLHW9HY"
+          title="Food for Thought Live"
+          src="https://www.youtube.com/embed/kbU2WG9gzSs"
           style={{
             position: 'absolute',
           }}
