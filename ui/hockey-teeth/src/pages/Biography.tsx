@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  ImageList, ImageListItem, Link, List, Typography,
+  Box, ImageList, ImageListItem, Link, List, Typography,
 } from '@mui/material';
 import biography from '../data/Biography';
 
@@ -73,11 +73,12 @@ function Biography({ showAccolades }: IBiographyProps) {
     <>
       <Typography variant="h1">Hockey Teeth</Typography>
       <br />
-      <div
-        style={{
+      <Box
+        sx={{
           position: 'relative',
           display: 'flex',
-          paddingBottom: '66.67%',
+          pb: '66.67%',
+          mb: 5,
           height: 0,
           overflow: 'hidden',
           justifyContent: 'center',
@@ -92,7 +93,7 @@ function Biography({ showAccolades }: IBiographyProps) {
           src="https://d19uxx92abk94f.cloudfront.net/band-photos/cover-2025-05-26.webp"
           alt="cover"
         />
-      </div>
+      </Box>
       <Typography variant="h3">
         About Hockey Teeth
       </Typography>
