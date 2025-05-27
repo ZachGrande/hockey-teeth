@@ -1,6 +1,5 @@
 import React from 'react';
 import Shows, { IShowsProps } from './Shows';
-import Biography from './Biography';
 import NewReleaseVideo from '../components/NewReleaseVideo';
 import NewReleaseMusic from '../components/NewReleaseMusic';
 
@@ -17,7 +16,6 @@ function Home({ title, isUpcoming }: IShowsProps) {
       <NewReleaseMusic album={newMusic} />
       <Shows title={title} isUpcoming={isUpcoming} />
       <NewReleaseVideo />
-      <Biography showAccolades={false} />
     </div>
   );
 }
