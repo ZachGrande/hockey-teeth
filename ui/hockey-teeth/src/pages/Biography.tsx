@@ -86,7 +86,6 @@ function Biography({ showAccolades }: IBiographyProps) {
       >
         <img
           width="90%"
-          height="90%"
           style={{
             position: 'absolute',
           }}
