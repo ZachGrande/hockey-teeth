@@ -53,11 +53,15 @@ function Shows({ title, isUpcoming }: IShowsProps) {
   }
 
   return (
-    <div>
-      <Typography variant="h1">{title}</Typography>
-      <br />
+    <>
+      {isUpcoming && (
+        <>
+          <Typography variant="h1">{title}</Typography>
+          <br />
+        </>
+      )}
       <ShowList shows={shows} includeLink={isUpcoming} />
-    </div>
+    </>
   );
 }
 
