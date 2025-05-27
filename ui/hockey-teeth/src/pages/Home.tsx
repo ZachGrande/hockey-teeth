@@ -9,7 +9,7 @@ function Home({ title, isUpcoming }: IShowsProps) {
     songName: 'Cut Your Teeth',
     releaseDate: 'May 30, 2025',
     coverURL: 'https://d19uxx92abk94f.cloudfront.net/album-covers/cut-your-teeth.webp',
-    link: 'https://distrokid.com/hyperfollow/hockeyteeth/cut-your-teeth',
+    link: 'https://hockeyteeth1.bandcamp.com/album/cut-your-teeth',
   };
 
   return (
