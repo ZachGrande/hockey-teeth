@@ -38,6 +38,7 @@ function MenuBar() {
         sx={{
           justifyContent: 'center',
           maxWidth: 'sm',
+          mb: 6,
         }}
       >
         {menu.map((data) => (

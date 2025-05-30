@@ -6,6 +6,11 @@ import {
 function Music() {
   const albumCovers = [
     {
+      title: 'Cut Your Teeth',
+      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/cut-your-teeth.webp',
+      link: 'https://open.spotify.com/album/2FL9mG9WCeyVgH1cT3Jcgj?si=ao1Bed4lSwW1krSMmIyQJA',
+    },
+    {
       title: 'Food for Thought',
       image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/food-for-thought.webp',
       link: 'https://open.spotify.com/album/7hsBXKtZ30cQKTj8AUEc2C?si=e8oVNa8xT12D-WyIgPZEng',
@@ -59,6 +64,21 @@ function Music() {
   return (
     <>
       <Stack spacing={2}>
+        <Grid item xs={6}>
+          <iframe
+            style={{
+              borderRadius: '12px',
+              border: '0px',
+            }}
+            src="https://open.spotify.com/embed/album/2FL9mG9WCeyVgH1cT3Jcgj?utm_source=generator"
+            title="Cut Your Teeth"
+            width="90%"
+            height="352"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </Grid>
         <Grid item xs={6}>
           <iframe
             style={{
