@@ -1,5 +1,35 @@
 const data = [
   {
+    date: '2025-09-17',
+    venue: 'Woodstock\'s Pizza',
+    link: '',
+    location: 'Isla Vista, CA',
+  },
+  {
+    date: '2025-09-13',
+    venue: 'Green Auto',
+    link: 'https://www.eventbrite.com/e/hockey-teeth-the-lily-dippers-dusknote-tickets-1613754054819?aff=oddtdtcreator',
+    location: 'Vancouver, BC',
+  },
+  {
+    date: '2025-09-12',
+    venue: 'The Blue Room',
+    link: 'https://tickets.venuepilot.com/e/hockey-teeth-pilot-seat-dollarbird-2025-09-12-the-blue-room-bellingham-780d20',
+    location: 'Bellingham, WA',
+  },
+  {
+    date: '2025-09-6',
+    venue: 'Turn Turn Turn',
+    link: '',
+    location: 'Portland, OR',
+  },
+  {
+    date: '2025-09-03',
+    venue: 'Baba Yaga',
+    link: '',
+    location: 'Seattle, WA',
+  },
+  {
     date: '2025-08-08',
     venue: 'South Lake Union Block Party',
     link: '',
