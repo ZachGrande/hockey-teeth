@@ -18,10 +18,24 @@ module.exports = {
     'no-console': ['error', { allow: ['warn', 'error'] }],
     'no-warning-comments': ['error', { terms: ['todo'], location: 'start' }],
   },
-  ignorePatterns: [".eslintrc.js"],
   settings: {
     react: {
       version: 'detect',
     },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      },
+    }
   },
+  overrides: [
+    {
+      files: ['vite.config.*', 'vite.*.config.*'],
+      env: { node: true },
+      rules: {
+        'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+        'import/no-unresolved': 'off'
+      },
+    }
+  ]
 };
