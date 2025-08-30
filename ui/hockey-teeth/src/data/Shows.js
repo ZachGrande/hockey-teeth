@@ -1,11 +1,5 @@
 const data = [
   {
-    date: '2025-09-17',
-    venue: 'Woodstock\'s Pizza',
-    link: '',
-    location: 'Isla Vista, CA',
-  },
-  {
     date: '2025-09-13',
     venue: 'Green Auto',
     link: 'https://www.eventbrite.com/e/hockey-teeth-the-lily-dippers-dusknote-tickets-1613754054819?aff=oddtdtcreator',
@@ -18,15 +12,15 @@ const data = [
     location: 'Bellingham, WA',
   },
   {
-    date: '2025-09-6',
-    venue: 'Turn Turn Turn',
+    date: '2025-09-06',
+    venue: 'Turn! Turn! Turn!',
     link: '',
     location: 'Portland, OR',
   },
   {
     date: '2025-09-03',
     venue: 'Baba Yaga',
-    link: '',
+    link: 'https://tickets.venuepilot.com/e/shai-foxx-2025-09-03-baba-yaga-seattle-cee8c5',
     location: 'Seattle, WA',
   },
   {

@@ -8,6 +8,25 @@ interface IShowListProps {
 }
 
 function ShowList({ shows, includeLink }: IShowListProps) {
+  const renderTicketInfo = (location: string, link?: string) => {
+    if (!includeLink) {
+      return location;
+    }
+
+    if (link) {
+      return (
+        <>
+          {`${location} | `}
+          <Link variant="body1" color="inherit" href={link} target="_blank" rel="noreferrer">
+            Tickets
+          </Link>
+        </>
+      );
+    }
+
+    return `${location} | Tickets at door`;
+  };
+
   if (shows.length === 0) {
     return (
       <div>
@@ -16,29 +35,22 @@ function ShowList({ shows, includeLink }: IShowListProps) {
       </div>
     );
   }
+
   return (
     <div>
       {shows.map(({
         location, link, date, venue,
-      }) => {
-        const subHeader = includeLink && link
-          ? (
+      }) => (
+        <div key={date}>
+          <div className="show-item">
+            <Typography variant="h4">{`${date} | ${venue}`}</Typography>
             <Typography variant="body1">
-              {`${location} | `}
-              <Link variant="body1" color="inherit" href={link} target="_blank" rel="noreferrer">Tickets</Link>
+              {renderTicketInfo(location, link)}
             </Typography>
-          )
-          : <Typography variant="body1">{location}</Typography>;
-        return (
-          <div key={date}>
-            <div className="show-item">
-              <Typography variant="h4">{`${date} | ${venue}`}</Typography>
-              {subHeader}
-            </div>
-            <br />
           </div>
-        );
-      })}
+          <br />
+        </div>
+      ))}
     </div>
   );
 }
