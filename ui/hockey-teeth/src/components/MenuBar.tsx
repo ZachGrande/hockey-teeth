@@ -28,6 +28,10 @@ function MenuBar() {
       title: 'About',
       route: '/bio',
     },
+    {
+      title: 'Store',
+      route: '/store',
+    },
   ];
 
   return (
