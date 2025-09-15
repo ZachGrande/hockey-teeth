@@ -9,6 +9,7 @@ import Biography from '../pages/Biography';
 import Music from '../pages/Music';
 import Home from '../pages/Home';
 import HomeAdmin from '../pages/admin/HomeAdmin';
+import Store from '../pages/Store';
 
 function SiteRouter() {
   return (
@@ -21,6 +22,7 @@ function SiteRouter() {
         <Route path="news" element={<News />} />
         <Route path="bio" element={<Biography showAccolades={false} />} />
         <Route path="music" element={<Music />} />
+        <Route path="store" element={<Store />} />
       </Route>
       <Route element={<AdminLayout />}>
         <Route path="admin" element={<HomeAdmin />} />
