@@ -23,7 +23,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.9.3",
     "web-vitals": "^5.1.0",
-    "yup": "^1.2.0"
+    "yup": "^1.7.1"
   },
   "scripts": {
     "dev": "vite",
