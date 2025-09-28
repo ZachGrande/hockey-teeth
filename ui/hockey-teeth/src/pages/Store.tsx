@@ -21,6 +21,12 @@ interface StoreItem {
 
 const items: StoreItem[] = [
   {
+    title: 'Red Ringer License Plate Tee',
+    description: 'Red Ringer License Plate Tee',
+    image: 'https://f4.bcbits.com/img/0041116087_36.jpg',
+    link: 'https://hockeyteeth1.bandcamp.com/merch/red-ringer-license-plate-tee',
+  },
+  {
     title: 'Cut Your Teeth',
     description: 'Cut Your Teeth (Album)',
     image: 'https://f4.bcbits.com/img/a2214400431_16.jpg',
