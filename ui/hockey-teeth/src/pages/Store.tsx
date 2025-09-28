@@ -174,7 +174,6 @@ function Store() {
       <Grid
         container
         rowSpacing={4}
-        columnSpacing={{ md: 6 }}
         justifyContent="center"
         alignItems="stretch"
       >
@@ -185,7 +184,7 @@ function Store() {
             sm={6}
             md={5}
             key={item.title}
-            sx={{ display: 'flex', justifyContent: 'center' }}
+            sx={{ px: { md: 1.5 } }}
           >
             <StoreItemCard
               title={item.title}
