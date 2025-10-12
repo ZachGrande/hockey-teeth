@@ -1,5 +1,11 @@
 const data = [
   {
+    date: '2025-11-20',
+    venue: 'Neumos',
+    link: 'https://www.axs.com/events/1146703/justin-harden-tickets?skin=neumos',
+    location: 'Seattle, WA',
+  },
+  {
     date: '2025-09-13',
     venue: 'Green Auto',
     link: 'https://www.eventbrite.com/e/hockey-teeth-the-lily-dippers-dusknote-tickets-1613754054819?aff=oddtdtcreator',
