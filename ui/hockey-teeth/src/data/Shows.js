@@ -1,5 +1,23 @@
 const data = [
   {
+    date: '2026-04-28',
+    venue: 'Kelly\'s Olympian',
+    link: '',
+    location: 'Portland, OR',
+  },
+  {
+    date: '2026-04-02',
+    venue: 'Hidden Hall',
+    link: 'https://www.tixr.com/groups/hiddenhall/events/hockey-teeth-w-poached-zailee-haze-175327',
+    location: 'Seattle, WA',
+  },
+  {
+    date: '2026-03-28',
+    venue: 'Jazzbones',
+    link: '',
+    location: 'Tacoma, WA',
+  },
+  {
     date: '2025-11-20',
     venue: 'Neumos',
     link: 'https://www.axs.com/events/1146703/justin-harden-tickets?skin=neumos',
