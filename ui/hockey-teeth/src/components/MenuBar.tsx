@@ -30,7 +30,8 @@ function MenuBar() {
     },
     {
       title: 'Store',
-      route: '/store',
+      route: 'https://hockeyteeth1.bandcamp.com/merch',
+      external: true,
     },
   ];
 
@@ -47,17 +48,30 @@ function MenuBar() {
       >
         {menu.map((data) => (
           <Grid item xs={6} key={data.title}>
-            <Link
-              to={data.route}
-              variant="h3"
-              underline="none"
-              component={RouterLink}
-              color={location.pathname === data.route
-                ? theme.palette.text.primary
-                : theme.palette.text.secondary}
-            >
-              {data.title}
-            </Link>
+            {data.external ? (
+              <Link
+                href={data.route}
+                variant="h3"
+                underline="none"
+                target="_blank"
+                rel="noopener noreferrer"
+                color={theme.palette.text.secondary}
+              >
+                {data.title}
+              </Link>
+            ) : (
+              <Link
+                to={data.route}
+                variant="h3"
+                underline="none"
+                component={RouterLink}
+                color={location.pathname === data.route
+                  ? theme.palette.text.primary
+                  : theme.palette.text.secondary}
+              >
+                {data.title}
+              </Link>
+            )}
           </Grid>
         ))}
       </Grid>
