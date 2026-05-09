@@ -12,16 +12,16 @@
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^30.0.0",
-    "@types/node": "^24.12.2",
+    "@types/node": "^24.12.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "axios": "^1.15.2",
+    "axios": "^1.16.0",
     "chart.js": "^4.5.1",
     "formik": "^2.4.9",
-    "react": "^19.2.5",
+    "react": "^19.2.6",
     "react-chartjs-2": "^5.3.1",
-    "react-dom": "^19.2.5",
-    "react-router-dom": "^7.14.2",
+    "react-dom": "^19.2.6",
+    "react-router-dom": "^7.15.0",
     "web-vitals": "^5.2.0",
     "yup": "^1.7.1"
   },
@@ -53,6 +53,6 @@
     "eslint-plugin-prettier": "^5.5.5",
     "prettier": "^3.8.3",
     "typescript": "^5.9.3",
-    "vite": "^7.3.2"
+    "vite": "^7.3.3"
   }
 }

@@ -6,6 +6,11 @@ import {
 function Music() {
   const albumCovers = [
     {
+      title: 'Why Do We Fret?',
+      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/why-do-we-fret.webp',
+      link: 'https://open.spotify.com/album/0JX3sEZhYsVTv7HptnRuas?si=3kfLBMinQXCqnpAETqg2_g',
+    },
+    {
       title: 'Cut Your Teeth',
       image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/cut-your-teeth.webp',
       link: 'https://open.spotify.com/album/2FL9mG9WCeyVgH1cT3Jcgj?si=ao1Bed4lSwW1krSMmIyQJA',
@@ -64,6 +69,21 @@ function Music() {
   return (
     <>
       <Stack spacing={2}>
+        <Grid item xs={6}>
+          <iframe
+            style={{
+              borderRadius: '12px',
+              border: '0px',
+            }}
+            src="https://open.spotify.com/embed/album/0JX3sEZhYsVTv7HptnRuas"
+            title="Why Do We Fret?"
+            width="90%"
+            height="152"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </Grid>
         <Grid item xs={6}>
           <iframe
             style={{
