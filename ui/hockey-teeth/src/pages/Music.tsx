@@ -6,6 +6,11 @@ import {
 function Music() {
   const albumCovers = [
     {
+      title: 'Why Do We Fret?',
+      image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/why-do-we-fret.webp',
+      link: 'https://open.spotify.com/album/0JX3sEZhYsVTv7HptnRuas?si=3kfLBMinQXCqnpAETqg2_g',
+    },
+    {
       title: 'Cut Your Teeth',
       image: 'https://d19uxx92abk94f.cloudfront.net/album-covers/cut-your-teeth.webp',
       link: 'https://open.spotify.com/album/2FL9mG9WCeyVgH1cT3Jcgj?si=ao1Bed4lSwW1krSMmIyQJA',
