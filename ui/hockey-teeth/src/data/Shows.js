@@ -1,5 +1,11 @@
 const data = [
   {
+    date: '2026-08-20',
+    venue: 'The Funhouse',
+    link: 'https://www.elcorazonseattle.com/shows/brass-camel-20-aug',
+    location: 'Seattle, WA',
+  },
+  {
     date: '2026-04-24',
     venue: 'Kelly\'s Olympian',
     link: '',
