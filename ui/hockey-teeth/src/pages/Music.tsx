@@ -75,6 +75,21 @@ function Music() {
               borderRadius: '12px',
               border: '0px',
             }}
+            src="https://open.spotify.com/embed/album/2uMWy3MlF7lSEdDWOQzKFo"
+            title="Baby's Gone Home"
+            width="90%"
+            height="152"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <iframe
+            style={{
+              borderRadius: '12px',
+              border: '0px',
+            }}
             src="https://open.spotify.com/embed/album/0JX3sEZhYsVTv7HptnRuas"
             title="Why Do We Fret?"
             width="90%"

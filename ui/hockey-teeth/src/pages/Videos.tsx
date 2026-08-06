@@ -3,6 +3,14 @@ import React from 'react';
 function Videos() {
   const videos = [
     {
+      title: 'Why Do We Fret? (Official Music Video)',
+      link: 'https://www.youtube.com/embed/kFuGYzCTbsU',
+    },
+    {
+      title: 'On/Off & The Seasons - Live at Capitol Hill Block Party',
+      link: 'https://www.youtube.com/embed/HtoBx0r1PLI',
+    },
+    {
       title: 'Big Red (Live on Art Zone)',
       link: 'https://www.youtube.com/embed/kbU2WG9gzSs',
     },
