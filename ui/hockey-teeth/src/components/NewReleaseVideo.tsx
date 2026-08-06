@@ -4,7 +4,7 @@ import React from 'react';
 function Videos() {
   return (
     <>
-      <Typography variant="h3">Food for Thought (Live on Art Zone)</Typography>
+      <Typography variant="h3">Why Do We Fret? (Official Music Video)</Typography>
       <br />
       <div style={{
         position: 'relative',
@@ -18,8 +18,8 @@ function Videos() {
         <iframe
           width="90%"
           height="90%"
-          title="Food for Thought Live"
-          src="https://www.youtube.com/embed/kbU2WG9gzSs"
+          title="Why Do We Fret?"
+          src="https://www.youtube.com/embed/kFuGYzCTbsU"
           style={{
             position: 'absolute',
           }}
