@@ -1,5 +1,11 @@
 const data = [
   {
+    date: '2026-10-01',
+    venue: 'Barboza',
+    link: 'https://www.axs.com/events/1427061/rum-jungle-tickets?skin=barboza',
+    location: 'Seattle, WA',
+  },
+  {
     date: '2026-08-20',
     venue: 'The Funhouse',
     link: 'https://www.elcorazonseattle.com/shows/brass-camel-20-aug',
