@@ -1,16 +1,27 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { Container } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { withAuthenticationRequired } from '@auth0/auth0-react';
-import logo from '../assets/logo.svg';
+
+const logo = new URL('../assets/logo.svg', import.meta.url).href;
 
 function AdminLayout() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <Container maxWidth="md">
+      <Box component="header" sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+        <Box
+          component="img"
+          src={logo}
+          alt="logo"
+          sx={{
+            height: '150px',
+            width: '375px',
+            maxWidth: '100%',
+            pointerEvents: 'none',
+          }}
+        />
+      </Box>
+      <Container maxWidth="md" sx={{ pb: 10 }}>
         <Outlet />
       </Container>
     </div>
