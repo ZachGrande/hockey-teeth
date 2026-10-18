@@ -4,7 +4,7 @@ import ShowList from '../components/ShowList';
 import Loading from '../components/Loading';
 import ErrorAPI from '../components/ErrorAPI';
 import { ShowType } from '../data/Shows.types';
-import fetchShows from '../data/showsApi';
+import { fetchShows } from '../data/showsApi';
 
 export interface IShowsProps {
   title: string;

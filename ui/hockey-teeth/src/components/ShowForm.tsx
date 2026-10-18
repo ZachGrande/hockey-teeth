@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import {
   Alert, Button, Container, Grid, Stack, TextField, Typography,
 } from '@mui/material';
 import { useFormik, FormikErrors } from 'formik';
 import * as yup from 'yup';
-import config from '../config';
+import {
+  GoogleAuthProvider, User, onAuthStateChanged, signInWithPopup, signOut,
+} from 'firebase/auth';
+import { auth } from '../firebase';
+import { addShow } from '../data/showsApi';
 
 type FormValues = {
   date: string;
@@ -23,8 +26,34 @@ const validationSchema = yup.object({
   link: yup.string().url('Enter a valid URL'),
 });
 
+function getErrorMessage(error: unknown): string {
+  const message = error instanceof Error ? error.message : String(error);
+  if (message.includes('PERMISSION_DENIED')) {
+    return 'This Google account is not allowed to add shows.';
+  }
+  return 'An error occurred while adding the show.';
+}
+
 function ShowForm() {
   const [success, setSuccess] = useState(false);
+  const [user, setUser] = useState<User | null>(auth.currentUser);
+  const [authError, setAuthError] = useState('');
+
+  useEffect(() => onAuthStateChanged(auth, setUser), []);
+
+  const handleSignIn = async () => {
+    setAuthError('');
+    try {
+      await signInWithPopup(auth, new GoogleAuthProvider());
+    } catch (e) {
+      const code = (e as { code?: string }).code ?? '';
+      if (code !== 'auth/popup-closed-by-user' && code !== 'auth/cancelled-popup-request') {
+        console.error('Firebase sign-in failed', e);
+        setAuthError('Google sign-in failed. Please try again.');
+      }
+    }
+  };
+
   const formik = useFormik({
     initialValues: {
       date: '',
@@ -34,21 +63,14 @@ function ShowForm() {
     },
     validationSchema,
     onSubmit: async (values, { setSubmitting, setErrors }) => {
+      setSuccess(false);
       try {
-        const response = await axios.post(`${config.api.apiUrl}/shows/add`, values, {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-
-        if (response.status !== 201) {
-          setErrors({ submit: 'An error occurred while adding the show.' } as ExtendedErrors);
-        } else {
-          setSuccess(true);
-          formik.resetForm();
-        }
+        await addShow(values);
+        setSuccess(true);
+        formik.resetForm();
       } catch (e) {
-        setErrors({ submit: 'An error occurred while adding the show.' } as ExtendedErrors);
+        console.error('Failed to add show', e);
+        setErrors({ submit: getErrorMessage(e) } as ExtendedErrors);
       }
 
       setSubmitting(false);
@@ -60,6 +82,19 @@ function ShowForm() {
   return (
     <Container>
       <Typography variant="h3" gutterBottom>Add Show</Typography>
+      <Stack spacing={1} alignItems="center" sx={{ mb: 3 }}>
+        {user ? (
+          <Typography variant="body2">
+            {`Signed in to Firebase as ${user.email ?? user.uid} `}
+            <Button size="small" onClick={() => signOut(auth)}>Sign out</Button>
+          </Typography>
+        ) : (
+          <Button variant="outlined" onClick={handleSignIn}>
+            Sign in with Google to add shows
+          </Button>
+        )}
+        {authError && <Alert severity="error">{authError}</Alert>}
+      </Stack>
       <form onSubmit={formik.handleSubmit}>
         <Stack spacing={3}>
           <Grid container spacing={3} justifyContent="center">
@@ -108,7 +143,12 @@ function ShowForm() {
               />
             </Grid>
             <Grid item xs={12} sm={8} md={6}>
-              <Button type="submit" variant="contained" color="primary">
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                disabled={!user || formik.isSubmitting}
+              >
                 Submit
               </Button>
             </Grid>
