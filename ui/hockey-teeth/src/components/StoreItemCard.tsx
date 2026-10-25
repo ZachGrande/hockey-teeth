@@ -61,7 +61,8 @@ function StoreItemCard({
           sx={{
             position: 'relative',
             width: '100%',
-            aspectRatio: { xs: '1 / 1', md: '4 / 5' }, // square on mobile, slightly taller portrait on desktop
+            aspectRatio:
+              { xs: '1 / 1', md: '4 / 5' }, // square on mobile, slightly taller portrait on desktop
             overflow: 'hidden',
           }}
         >

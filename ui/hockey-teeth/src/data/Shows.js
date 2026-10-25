@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/max-len */
 const data = [
   {
     date: '2026-10-01',

@@ -10,17 +10,19 @@ import {
 import { auth } from '../firebase';
 import { addShow } from '../data/showsApi';
 
-type FormValues = {
+interface FormValues {
   date: string;
   venue: string;
   location: string;
   link: string;
-};
+}
 
 type ExtendedErrors = FormikErrors<FormValues> & { submit?: string };
 
 const validationSchema = yup.object({
-  date: yup.string().required('Date is required').matches(/^\d{4}-\d{2}-\d{2}$/, 'Date must be in YYYY-MM-DD format'),
+  date: yup.string()
+    .required('Date is required')
+    .matches(/^\d{4}-\d{2}-\d{2}$/, 'Date must be in YYYY-MM-DD format'),
   venue: yup.string().required('Venue is required'),
   location: yup.string().required('Location is required'),
   link: yup.string().url('Enter a valid URL'),

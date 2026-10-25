@@ -9,7 +9,7 @@ export interface INewReleaseVideoProps {
     releaseDate?: string;
     coverURL: string;
     link: string;
-  }
+  };
 }
 
 function NewReleaseVideo({ album }: INewReleaseVideoProps) {
@@ -58,7 +58,13 @@ function NewReleaseVideo({ album }: INewReleaseVideoProps) {
           <Typography variant="h5" color={theme.palette.text.secondary}>
             {album.releaseDate}
           </Typography>
-          <Button variant="contained" href={album.link} target="_blank" rel="noreferrer" sx={{ mt: 2 }}>
+          <Button
+            variant="contained"
+            href={album.link}
+            target="_blank"
+            rel="noreferrer"
+            sx={{ mt: 2 }}
+          >
             <Typography variant="h6">
               {album.releaseDate ? 'PRESAVE' : 'OUT NOW'}
             </Typography>

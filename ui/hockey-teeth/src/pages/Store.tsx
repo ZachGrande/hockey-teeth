@@ -4,8 +4,8 @@ import {
   Typography,
   Stack,
 } from '@mui/material';
-import StoreItemCard from '../components/StoreItemCard';
 import type { StoreItem } from '@/types/store';
+import StoreItemCard from '../components/StoreItemCard';
 
 const items: StoreItem[] = [
   {

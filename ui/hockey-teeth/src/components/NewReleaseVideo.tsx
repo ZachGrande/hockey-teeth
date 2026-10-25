@@ -23,6 +23,7 @@ function Videos() {
           style={{
             position: 'absolute',
           }}
+          // eslint-disable-next-line @stylistic/max-len
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         />
