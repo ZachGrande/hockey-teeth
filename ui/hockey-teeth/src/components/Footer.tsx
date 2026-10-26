@@ -46,6 +46,7 @@ function Footer() {
         <Link
           variant="h3"
           color="inherit"
+          // eslint-disable-next-line @stylistic/max-len
           href="https://gmail.us5.list-manage.com/subscribe?u=4a374bb0ae22afdfc30d38dce&id=0163152dc3"
           target="_blank"
           rel="noreferrer"

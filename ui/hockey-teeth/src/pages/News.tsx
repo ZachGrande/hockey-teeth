@@ -10,7 +10,15 @@ function News() {
       {articles.map((data) => (
         <div key={data.title}>
           <div className="show-item">
-            <Link variant="h4" color="inherit" href={data.link} target="_blank" rel="noreferrer">{data.title}</Link>
+            <Link
+              variant="h4"
+              color="inherit"
+              href={data.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {data.title}
+            </Link>
             <Typography variant="body1">{data.author}</Typography>
           </div>
           <br />

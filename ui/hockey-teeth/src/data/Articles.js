@@ -2,6 +2,7 @@ const articles = [
   {
     title: 'Long-Awaited Lawnstock Makes First In-Person Return Since 2019',
     author: 'The Western Front',
+    // eslint-disable-next-line @stylistic/max-len
     link: 'https://www.westernfrontonline.com/article/2022/06/long-awaited-lawnstock-makes-first-in-person-return-since-2019',
   },
   {
