@@ -20,14 +20,14 @@ const theme = createTheme({
     fontFamily: ['Montserrat', 'serif'].join(','),
     h1: {
       fontFamily: ['Libre Baskerville', 'sans-serif'].join(','),
-      fontSize: 50,
+      fontSize: 'clamp(2.25rem, 9vw, 3.125rem)',
     },
     h2: {
       fontFamily: ['Libre Baskerville', 'sans-serif'].join(','),
     },
     h3: {
       fontFamily: ['Libre Baskerville', 'sans-serif'].join(','),
-      fontSize: 30,
+      fontSize: 'clamp(1.5rem, 6vw, 1.875rem)',
     },
     h4: {
       fontFamily: ['Libre Baskerville', 'serif'].join(','),
