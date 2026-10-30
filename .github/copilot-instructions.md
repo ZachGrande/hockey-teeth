@@ -11,6 +11,7 @@ The `shows` data lives in the production Firebase Realtime Database (`src/data/s
 - Choose a scenario with the `mockShows` query param, e.g. `http://localhost:3000/home?mockShows=none`:
   - `default`: one ticketed upcoming show, one "at the door" upcoming show, and past shows
   - `one`: one ticketed upcoming show
+  - `two`: two ticketed upcoming shows
   - `door`: one upcoming show without a ticket link
   - `none`: no upcoming shows (past shows only)
   - `error`: the request fails

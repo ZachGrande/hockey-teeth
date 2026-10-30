@@ -1,7 +1,7 @@
 import { ShowType } from '../Shows.types';
 
 // Local, in-memory stand-in for the Firebase `shows` node. Only loaded by `npm run dev:mock`.
-const scenarioNames = ['default', 'one', 'door', 'none', 'error'] as const;
+const scenarioNames = ['default', 'one', 'two', 'door', 'none', 'error'] as const;
 export type MockShowsScenario = typeof scenarioNames[number];
 
 const MOCK_LATENCY_MS = 400;
@@ -15,32 +15,41 @@ function isoDaysFromToday(days: number) {
   return `${date.getFullYear()}-${month}-${day}`;
 }
 
-const ticketedShow = (days: number): ShowType => ({
+const ticketedShow = (
+  days: number,
+  venue = 'Climate Pledge Arena',
+  location = 'Seattle, WA',
+): ShowType => ({
   date: isoDaysFromToday(days),
-  venue: 'The Mock Arcade',
-  location: 'Seattle, WA',
+  venue,
+  location,
   link: 'https://example.com/mock-tickets',
 });
 
 const atDoorShow = (days: number): ShowType => ({
   date: isoDaysFromToday(days),
-  venue: 'Mock Door Tavern',
-  location: 'Tacoma, WA',
+  venue: 'Sunset Tavern',
+  location: 'Seattle, WA',
   link: '',
 });
 
 const pastShows = (): ShowType[] => [
   {
-    date: isoDaysFromToday(-14), venue: 'Mock Past Hall', location: 'Portland, OR', link: '',
+    date: isoDaysFromToday(-14), venue: 'The Blue Room', location: 'Bellingham, WA', link: '',
   },
   {
-    date: isoDaysFromToday(-60), venue: 'Mock Basement', location: 'Seattle, WA', link: '',
+    date: isoDaysFromToday(-60), venue: 'Neumos', location: 'Seattle, WA', link: '',
   },
 ];
 
 const scenarios: Record<MockShowsScenario, () => ShowType[]> = {
   default: () => [ticketedShow(10), atDoorShow(24), ...pastShows()],
   one: () => [ticketedShow(10), ...pastShows()],
+  two: () => [
+    ticketedShow(10),
+    ticketedShow(24, 'Wrigley Field', 'Chicago, IL'),
+    ...pastShows(),
+  ],
   door: () => [atDoorShow(10), ...pastShows()],
   none: () => pastShows(),
   error: () => {

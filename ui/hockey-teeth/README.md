@@ -12,7 +12,7 @@ In the project directory, you can run:
 
 ### `npm run dev:mock`
 
-Runs the dev server with local, in-memory show data instead of the production Firebase database. Pick a data scenario with `?mockShows=default|one|door|none|error`. See [`.github/copilot-instructions.md`](../../.github/copilot-instructions.md).
+Runs the dev server with local, in-memory show data instead of the production Firebase database. Pick a data scenario with `?mockShows=default|one|two|door|none|error`. See [`.github/copilot-instructions.md`](../../.github/copilot-instructions.md).
 
 ### `yarn start`
 
