@@ -9,7 +9,7 @@ import NorthEastRoundedIcon from '@mui/icons-material/NorthEastRounded';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import navigation from '../data/navigation';
 import { Show } from '../data/useShows';
-import { colors, fonts, iconButtonSx } from '../theme/tokens';
+import { colors, iconButtonSx } from '../theme/tokens';
 import TicketButton from './TicketButton';
 
 const blink = keyframes`
@@ -23,11 +23,8 @@ const linkSx = {
   alignItems: 'center',
   gap: 2,
   py: 1,
+  typography: 'menuItem',
   color: colors.ink,
-  fontFamily: fonts.display,
-  fontWeight: 700,
-  fontSize: 'clamp(1.75rem, 8vw, 2.5rem)',
-  lineHeight: 1.25,
   textDecoration: 'none',
   outline: 'none',
   '&::before': {

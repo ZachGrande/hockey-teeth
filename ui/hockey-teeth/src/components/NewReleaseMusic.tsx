@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { cardSx, colors, fonts } from '../theme/tokens';
+import { cardSx } from '../theme/tokens';
 import PillLink from './PillLink';
 import Reveal from './Reveal';
 import SectionTitle from './SectionTitle';
@@ -44,21 +44,11 @@ function NewReleaseMusic({ album }: INewReleaseMusicProps) {
               borderRadius: '10px',
             }}
           />
-          <Typography
-            component="h3"
-            sx={{
-              mt: 4,
-              color: colors.ink,
-              fontFamily: fonts.display,
-              fontWeight: 700,
-              fontSize: 22,
-              lineHeight: 1.2,
-            }}
-          >
+          <Typography variant="cardTitle" sx={{ mt: 4 }}>
             {album.songName}
           </Typography>
           {album.releaseDate && (
-            <Typography sx={{ mt: 1, color: colors.muted, fontFamily: fonts.body }}>
+            <Typography variant="meta" sx={{ mt: 1 }}>
               {album.releaseDate}
             </Typography>
           )}

@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { colors, fonts, retroStep } from '../theme/tokens';
+import { colors, retroStep } from '../theme/tokens';
 
 export interface IPillLinkStyleProps {
   block?: boolean;
@@ -8,7 +8,8 @@ export interface IPillLinkStyleProps {
 
 const PillLink = styled('a', {
   shouldForwardProp: (prop) => prop !== 'block' && prop !== 'tone',
-})<IPillLinkStyleProps>(({ block = false, tone = 'blue' }) => ({
+})<IPillLinkStyleProps>(({ theme, block = false, tone = 'blue' }) => ({
+  ...theme.typography.cta,
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -21,11 +22,7 @@ const PillLink = styled('a', {
   background: tone === 'blue' ? colors.blue : colors.pink,
   color: tone === 'blue' ? colors.white : colors.ink,
   boxShadow: '0 2px 0 rgba(21, 21, 21, 0.18)',
-  fontFamily: fonts.body,
-  fontWeight: 700,
   fontSize: block ? 15 : 13,
-  letterSpacing: '0.04em',
-  textTransform: 'uppercase',
   textDecoration: 'none',
   whiteSpace: 'nowrap',
   flexShrink: 0,

@@ -7,9 +7,7 @@ import bandcamp from '../assets/bandcamp.svg';
 import paypal from '../assets/paypal.svg';
 import venmo from '../assets/venmo.svg';
 import { mailingListUrl } from '../data/navigation';
-import {
-  cardSx, colors, focusRing, fonts, retroStep,
-} from '../theme/tokens';
+import { cardSx, focusRing, retroStep } from '../theme/tokens';
 import PillLink from './PillLink';
 
 const social = [
@@ -52,16 +50,10 @@ function Footer() {
         ...cardSx, maxWidth: 400, mx: 'auto', p: 5,
       }}
       >
-        <Typography sx={{
-          color: colors.ink, fontFamily: fonts.display, fontWeight: 700, fontSize: 20,
-        }}
-        >
+        <Typography variant="cardTitle" component="p">
           Join our mailing list!
         </Typography>
-        <Typography sx={{
-          mt: 1, mb: 4, color: colors.muted, fontFamily: fonts.body, fontSize: 14,
-        }}
-        >
+        <Typography variant="meta" sx={{ mt: 1, mb: 4 }}>
           Be the first to hear about new shows and music.
         </Typography>
         <PillLink tone="pink" block href={mailingListUrl} target="_blank" rel="noopener noreferrer">

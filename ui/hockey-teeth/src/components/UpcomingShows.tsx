@@ -2,19 +2,12 @@ import React from 'react';
 import { Box, Link, Typography } from '@mui/material';
 import useShows, { Show } from '../data/useShows';
 import { mailingListUrl } from '../data/navigation';
-import { cardSx, colors, fonts } from '../theme/tokens';
+import { cardSx, colors } from '../theme/tokens';
 import ErrorAPI from './ErrorAPI';
 import Loading from './Loading';
 import Reveal from './Reveal';
 import SectionTitle from './SectionTitle';
 import TicketButton from './TicketButton';
-
-const smallCaps = {
-  fontFamily: fonts.body,
-  fontWeight: 700,
-  letterSpacing: '0.1em',
-  textTransform: 'uppercase',
-} as const;
 
 function ShowCard({ show, index }: { show: Show; index: number }) {
   const part = (options: Intl.DateTimeFormatOptions) => (
@@ -29,7 +22,7 @@ function ShowCard({ show, index }: { show: Show; index: number }) {
             component="time"
             dateTime={show.date}
             sx={{
-              ...smallCaps,
+              typography: 'overline',
               flexShrink: 0,
               width: 60,
               py: 1.5,
@@ -40,30 +33,17 @@ function ShowCard({ show, index }: { show: Show; index: number }) {
               lineHeight: 1.15,
             }}
           >
-            <Box sx={{ fontSize: 11 }}>{part({ weekday: 'short' })}</Box>
+            <Box>{part({ weekday: 'short' })}</Box>
             <Box sx={{ fontSize: 26, fontWeight: 800, letterSpacing: 0 }}>
               {part({ day: 'numeric' })}
             </Box>
-            <Box sx={{ fontSize: 11 }}>{part({ month: 'short' })}</Box>
+            <Box>{part({ month: 'short' })}</Box>
           </Box>
           <Box sx={{ minWidth: 0 }}>
-            <Typography
-              component="h3"
-              sx={{
-                color: colors.ink,
-                fontFamily: fonts.display,
-                fontWeight: 700,
-                fontSize: 19,
-                lineHeight: 1.25,
-                overflowWrap: 'anywhere',
-              }}
-            >
+            <Typography variant="cardTitle" sx={{ overflowWrap: 'anywhere' }}>
               {show.venue}
             </Typography>
-            <Typography sx={{
-              mt: 0.5, color: colors.muted, fontFamily: fonts.body, fontSize: 14,
-            }}
-            >
+            <Typography variant="meta" sx={{ mt: 0.5 }}>
               {show.location}
             </Typography>
           </Box>
@@ -72,9 +52,9 @@ function ShowCard({ show, index }: { show: Show; index: number }) {
           {show.link ? (
             <TicketButton show={show} source="card" block />
           ) : (
-            <Typography sx={{
-              ...smallCaps, py: 1.5, color: colors.muted, fontSize: 12, textAlign: 'center',
-            }}
+            <Typography
+              variant="overline"
+              sx={{ py: 1.5, color: colors.muted, textAlign: 'center' }}
             >
               Tickets at the door
             </Typography>
@@ -94,16 +74,8 @@ function UpcomingShows() {
     if (shows.length === 0) {
       return (
         <Box sx={{ ...cardSx, p: 5 }}>
-          <Typography sx={{
-            color: colors.ink, fontFamily: fonts.display, fontWeight: 700, fontSize: 19,
-          }}
-          >
-            New shows coming soon!
-          </Typography>
-          <Typography sx={{
-            mt: 2, color: colors.muted, fontFamily: fonts.body, fontSize: 14,
-          }}
-          >
+          <Typography variant="cardTitle" component="p">New shows coming soon!</Typography>
+          <Typography variant="meta" sx={{ mt: 2 }}>
             <Link
               href={mailingListUrl}
               target="_blank"
