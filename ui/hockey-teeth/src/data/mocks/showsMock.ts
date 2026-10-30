@@ -55,7 +55,7 @@ function isScenario(value: string | null): value is MockShowsScenario {
 }
 
 function currentScenario(): MockShowsScenario {
-  const param = new URLSearchParams(window.location.search).get('mockShows');
+  const param = new URLSearchParams(window.location.search).get('mockshows');
   return isScenario(param) ? param : 'default';
 }
 
