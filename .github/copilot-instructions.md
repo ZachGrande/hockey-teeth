@@ -18,7 +18,7 @@ The `shows` data lives in the production Firebase Realtime Database (`src/data/s
 - Need another state? Add a scenario to `showsMock.ts`. Don't put temporary mock data in components or pages.
 - Keep fixture dates relative to today (`isoDaysFromToday`) so they never go stale.
 - In mock mode, `addShow` only appends to memory, so the data is lost on reload. Don't sign in to `/admin` with real accounts to test writes.
-- The mock is behind `import.meta.env.DEV` and imported dynamically, so production builds never include it. Keep new mock code behind the same guard. After changing it, run `npm run build` and confirm `grep -l "Mock Arcade" build/assets/*` finds nothing.
+- The mock is behind `import.meta.env.DEV` and imported dynamically, so production builds never include it. Keep new mock code behind the same guard. After changing it, run `npm run build` and confirm `grep -l "Mock shows request failed" build/assets/*` finds nothing (that string only exists in the mock module).
 - When verifying in a browser, confirm the network log has no requests matching `firebaseio|firebasedatabase`.
 - Firebase Auth, Firebase Analytics, and the Google Analytics tag still load in dev. None of them read from or write to the database.
 
