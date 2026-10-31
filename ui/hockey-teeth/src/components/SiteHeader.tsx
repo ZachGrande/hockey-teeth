@@ -11,9 +11,11 @@ import { iconButtonSx, shadows } from '../theme/tokens';
 import MenuOverlay from './MenuOverlay';
 import TicketButton from './TicketButton';
 
-// The logo is ~5.74:1. Size it so logo + menu button always fit on one row, even on narrow phones.
-const EXPANDED_LOGO_HEIGHT = 'min(56px, calc((100vw - 96px) / 5.74))';
-const COLLAPSED_LOGO_HEIGHT = 'min(30px, calc((100vw - 220px) / 5.74))';
+// The logo is ~5.74:1. It stays centered between two 44px side controls, so it gets
+// the width left after padding, both controls, and gaps on each side.
+const LOGO_FIT_HEIGHT = 'calc((100vw - 144px) / 5.74)';
+const EXPANDED_LOGO_HEIGHT = `min(44px, ${LOGO_FIT_HEIGHT})`;
+const COLLAPSED_LOGO_HEIGHT = `min(30px, ${LOGO_FIT_HEIGHT})`;
 const EXPANDED_PADDING_Y = 12;
 const COLLAPSE_AT = 40;
 const EXPAND_AT = 8;
@@ -49,7 +51,9 @@ function SiteHeader() {
         <Container
           maxWidth="md"
           sx={{
-            display: 'flex',
+            display: 'grid',
+            // Equal side columns keep the logo centered no matter what sits beside it.
+            gridTemplateColumns: '1fr auto 1fr',
             alignItems: 'center',
             gap: 2,
             px: { xs: 4, sm: 6 },
@@ -57,6 +61,26 @@ function SiteHeader() {
             transition: 'padding 250ms ease',
           }}
         >
+          <Box sx={{ justifySelf: 'start' }}>
+            <AnimatePresence>
+              {collapsed && ticketedShow && (
+                <m.div
+                  key="header-tickets"
+                  initial={{ opacity: 0, y: -4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <TicketButton
+                    show={ticketedShow}
+                    source="header"
+                    label="Tickets"
+                    iconOnlyOnMobile
+                  />
+                </m.div>
+              )}
+            </AnimatePresence>
+          </Box>
           <RouterLink to="/home" style={{ display: 'flex', borderRadius: 8 }}>
             <m.img
               src={logo}
@@ -72,27 +96,13 @@ function SiteHeader() {
               }}
             />
           </RouterLink>
-          <Box sx={{ flex: 1 }} />
-          <AnimatePresence>
-            {collapsed && ticketedShow && (
-              <m.div
-                key="header-tickets"
-                initial={{ opacity: 0, y: -4 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -4 }}
-                transition={{ duration: 0.2 }}
-              >
-                <TicketButton show={ticketedShow} source="header" label="Tickets" />
-              </m.div>
-            )}
-          </AnimatePresence>
           <IconButton
             aria-label="Open menu"
             aria-haspopup="dialog"
             aria-expanded={menuOpen}
             aria-controls="site-menu"
             onClick={() => setMenuOpen(true)}
-            sx={iconButtonSx}
+            sx={{ ...iconButtonSx, justifySelf: 'end' }}
           >
             <MenuRoundedIcon />
           </IconButton>
