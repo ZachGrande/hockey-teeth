@@ -61,14 +61,15 @@ interface IMenuPanelProps {
   in: boolean;
   onEnter?: () => void;
   onExited?: () => void;
+  onFocus?: React.FocusEventHandler<HTMLDivElement>;
   ref?: React.Ref<HTMLDivElement>;
   onClose: () => void;
   ticketedShow?: Show;
 }
 
 function MenuPanel({
-  in: open, onEnter = undefined, onExited = undefined, ref = undefined, onClose,
-  ticketedShow = undefined,
+  in: open, onEnter = undefined, onExited = undefined, onFocus = undefined, ref = undefined,
+  onClose, ticketedShow = undefined,
 }: IMenuPanelProps) {
   const location = useLocation();
 
@@ -79,6 +80,7 @@ function MenuPanel({
   return (
     <div
       ref={ref}
+      onFocus={onFocus}
       role="dialog"
       aria-modal="true"
       aria-label="Site menu"
@@ -168,7 +170,7 @@ interface IMenuOverlayProps {
 
 function MenuOverlay({ open, onClose, ticketedShow = undefined }: IMenuOverlayProps) {
   return (
-    <Modal open={open} onClose={onClose} hideBackdrop closeAfterTransition>
+    <Modal open={open} onClose={onClose} hideBackdrop>
       <MenuPanel in={open} onClose={onClose} ticketedShow={ticketedShow} />
     </Modal>
   );
