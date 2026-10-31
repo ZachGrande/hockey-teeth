@@ -1,9 +1,9 @@
-.App {
-  text-align: center;
-  background: rgba(255, 242, 183, 0.6);
-  min-height: 100vh;
+body {
+  background: #fff7d4;
 }
 
-.social img {
-  height: 35px;
+.App {
+  text-align: center;
+  background: #fff7d4;
+  min-height: 100vh;
 }
