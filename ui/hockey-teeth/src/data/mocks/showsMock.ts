@@ -1,8 +1,6 @@
 import { ShowType } from '../Shows.types';
 
 // Local, in-memory stand-in for the Firebase `shows` node. Only loaded by `npm run dev:mock`.
-const scenarioNames = ['default', 'one', 'two', 'door', 'none', 'error'] as const;
-export type MockShowsScenario = typeof scenarioNames[number];
 
 const MOCK_LATENCY_MS = 400;
 
@@ -42,37 +40,40 @@ const pastShows = (): ShowType[] => [
   },
 ];
 
-const scenarios: Record<MockShowsScenario, () => ShowType[]> = {
-  default: () => [ticketedShow(10), atDoorShow(24), ...pastShows()],
-  one: () => [ticketedShow(10), ...pastShows()],
-  two: () => [
+type Scenario = () => ShowType[];
+
+const defaultScenario: Scenario = () => [ticketedShow(10), atDoorShow(24), ...pastShows()];
+
+const scenarios = new Map<string, Scenario>([
+  ['default', defaultScenario],
+  ['one', () => [ticketedShow(10), ...pastShows()]],
+  ['two', () => [
     ticketedShow(10),
     ticketedShow(24, 'Wrigley Field', 'Chicago, IL'),
     ...pastShows(),
-  ],
-  door: () => [atDoorShow(10), ...pastShows()],
-  none: () => pastShows(),
-  error: () => {
+  ]],
+  ['door', () => [atDoorShow(10), ...pastShows()]],
+  ['none', () => pastShows()],
+  ['error', () => {
     throw new Error('Mock shows request failed');
-  },
-};
+  }],
+]);
 
 const addedShows: ShowType[] = [];
 
-function isScenario(value: string | null): value is MockShowsScenario {
-  return scenarioNames.some((name) => name === value);
-}
+const SCENARIO_PARAM = 'mockshows';
 
-function currentScenario(): MockShowsScenario {
-  const param = new URLSearchParams(window.location.search).get('mockshows');
-  return isScenario(param) ? param : 'default';
+function currentScenario(): Scenario {
+  const entry = Array.from(new URLSearchParams(window.location.search))
+    .find(([key]) => key.toLowerCase() === SCENARIO_PARAM);
+  return (entry && scenarios.get(entry[1].toLowerCase())) || defaultScenario;
 }
 
 export async function loadMockShows(): Promise<ShowType[]> {
   await new Promise((resolve) => {
     setTimeout(resolve, MOCK_LATENCY_MS);
   });
-  return [...scenarios[currentScenario()](), ...addedShows];
+  return [...currentScenario()(), ...addedShows];
 }
 
 export async function addMockShow(show: ShowType): Promise<void> {

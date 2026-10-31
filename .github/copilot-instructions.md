@@ -8,7 +8,7 @@ The `shows` data lives in the production Firebase Realtime Database (`src/data/s
 
 - Run the dev server with `npm run dev:mock` (from `ui/hockey-teeth`). This runs `vite --mode mock`, which loads `.env.mock` (`VITE_MOCK_SHOWS=true`).
 - In mock mode, `fetchShows` and `addShow` use the in-memory fixtures in `src/data/mocks/showsMock.ts`. No requests go to Firebase's database hosts (`*.firebaseio.com` / `*.firebasedatabase.app`).
-- Choose a scenario with the `mockShows` query param, e.g. `http://localhost:3000/home?mockShows=none`:
+- Choose a scenario with the `mockShows` query param (name and value are case-insensitive), e.g. `http://localhost:3000/home?mockShows=none`:
   - `default`: one ticketed upcoming show, one "at the door" upcoming show, and past shows
   - `one`: one ticketed upcoming show
   - `two`: two ticketed upcoming shows
