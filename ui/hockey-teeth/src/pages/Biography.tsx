@@ -6,6 +6,52 @@ import { AnimatePresence, m } from 'motion/react';
 import biography from '../data/Biography';
 import ShimmerSkeleton from '../components/ShimmerSkeleton';
 
+const CDN_BASE_URL = 'https://d19uxx92abk94f.cloudfront.net';
+const BAND_PHOTOS_URL = `${CDN_BASE_URL}/band-photos`;
+const COVER_IMAGE_URL = `${BAND_PHOTOS_URL}/cover-2025-05-26.webp`;
+
+interface IBiographyPhoto {
+  file: string;
+  cols: number;
+  rows: number;
+  height?: string;
+}
+
+const photos: IBiographyPhoto[] = [
+  {
+    file: 'band-01-2025-05-26.webp',
+    cols: 2,
+    rows: 1,
+  },
+  {
+    file: 'band-02.webp',
+    cols: 2,
+    rows: 2,
+    height: '345px',
+  },
+  {
+    file: 'band-03.webp',
+    cols: 2,
+    rows: 2,
+  },
+  {
+    file: 'band-04.webp',
+    cols: 1,
+    rows: 2,
+  },
+  {
+    file: 'band-05-2025-05-26.webp',
+    cols: 1,
+    rows: 2,
+    height: '339px',
+  },
+  {
+    file: 'band-06-2025-05-26.webp',
+    cols: 2,
+    rows: 1,
+  },
+];
+
 interface IBiographyProps {
   showAccolades: boolean;
 }
@@ -37,47 +83,6 @@ function Biography({ showAccolades }: IBiographyProps) {
     },
     {
       description: 'Over 10,000 total streams for our latest release, Sick Of Me',
-    },
-  ];
-
-  const images = [
-    {
-      title: 'Photo 1',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-01-2025-05-26.webp',
-      cols: 2,
-      rows: 1,
-    },
-    {
-      title: 'Photo 2',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-02.webp',
-      cols: 2,
-      rows: 2,
-      height: '345px',
-    },
-    {
-      title: 'Photo 3',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-03.webp',
-      cols: 2,
-      rows: 2,
-    },
-    {
-      title: 'Photo 4',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-04.webp',
-      cols: 1,
-      rows: 2,
-    },
-    {
-      title: 'Photo 5',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-05-2025-05-26.webp',
-      cols: 1,
-      rows: 2,
-      height: '339px',
-    },
-    {
-      title: 'Photo 6',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-06-2025-05-26.webp',
-      cols: 2,
-      rows: 1,
     },
   ];
 
@@ -120,7 +125,7 @@ function Biography({ showAccolades }: IBiographyProps) {
           transition={{ duration: 0.4, ease: 'easeOut' }}
           onLoad={() => setCoverFetched(true)}
           onError={() => setCoverFetched(true)}
-          src="https://d19uxx92abk94f.cloudfront.net/band-photos/cover-2025-05-26.webp"
+          src={COVER_IMAGE_URL}
           alt="cover"
         />
       </Box>
@@ -140,15 +145,15 @@ function Biography({ showAccolades }: IBiographyProps) {
         cols={3}
         gap={8}
       >
-        {images.map((item) => (
+        {photos.map((item, index) => (
           <ImageListItem
-            key={item.image}
+            key={item.file}
             cols={item.cols || 1}
             rows={item.rows || 1}
           >
             <img
-              src={item.image}
-              alt={item.title}
+              src={`${BAND_PHOTOS_URL}/${item.file}`}
+              alt={`Hockey Teeth ${index + 1}`}
               loading="lazy"
               style={{
                 height: item.height || 'auto',
