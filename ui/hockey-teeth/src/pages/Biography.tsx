@@ -12,45 +12,20 @@ const COVER_IMAGE_URL = `${BAND_PHOTOS_URL}/cover-2025-05-26.webp`;
 
 interface IBiographyPhoto {
   file: string;
-  cols: number;
-  rows: number;
-  height?: string;
+  cols: 1 | 2;
 }
 
 const photos: IBiographyPhoto[] = [
-  {
-    file: 'band-01-2025-05-26.webp',
-    cols: 2,
-    rows: 1,
-  },
-  {
-    file: 'band-02.webp',
-    cols: 2,
-    rows: 2,
-    height: '345px',
-  },
-  {
-    file: 'band-03.webp',
-    cols: 2,
-    rows: 2,
-  },
-  {
-    file: 'band-04.webp',
-    cols: 1,
-    rows: 2,
-  },
-  {
-    file: 'band-05-2025-05-26.webp',
-    cols: 1,
-    rows: 2,
-    height: '339px',
-  },
-  {
-    file: 'band-06-2025-05-26.webp',
-    cols: 2,
-    rows: 1,
-  },
+  { file: 'band-01-2025-05-26.webp', cols: 2 },
+  { file: 'band-02.webp', cols: 1 },
+  { file: 'band-03.webp', cols: 2 },
+  { file: 'band-04.webp', cols: 1 },
+  { file: 'band-05-2025-05-26.webp', cols: 1 },
+  { file: 'band-06-2025-05-26.webp', cols: 2 },
 ];
+
+// Height / width of a single-column cell; sets the row height responsively.
+const PORTRAIT_ASPECT_RATIO = '2 / 3';
 
 interface IBiographyProps {
   showAccolades: boolean;
@@ -140,23 +115,32 @@ function Biography({ showAccolades }: IBiographyProps) {
       <ImageList
         sx={{
           margin: 5,
+          overflow: 'hidden',
         }}
-        variant="masonry"
+        variant="quilted"
+        rowHeight="auto"
         cols={3}
         gap={8}
       >
         {photos.map((item, index) => (
           <ImageListItem
             key={item.file}
-            cols={item.cols || 1}
-            rows={item.rows || 1}
+            cols={item.cols}
+            sx={{
+              position: 'relative',
+              aspectRatio: item.cols === 1 ? PORTRAIT_ASPECT_RATIO : undefined,
+            }}
           >
             <img
               src={`${BAND_PHOTOS_URL}/${item.file}`}
               alt={`Hockey Teeth ${index + 1}`}
               loading="lazy"
               style={{
-                height: item.height || 'auto',
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
               }}
             />
           </ImageListItem>
