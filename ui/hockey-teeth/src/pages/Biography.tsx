@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   Box, ImageList, ImageListItem, Link, List, Typography,
 } from '@mui/material';
+import { AnimatePresence, m } from 'motion/react';
 import biography from '../data/Biography';
+import ShimmerSkeleton from '../components/ShimmerSkeleton';
 
 interface IBiographyProps {
   showAccolades: boolean;
 }
 
 function Biography({ showAccolades }: IBiographyProps) {
+  const [coverFetched, setCoverFetched] = useState(false);
+  const [minSkeletonElapsed, setMinSkeletonElapsed] = useState(false);
+  const coverLoaded = coverFetched && minSkeletonElapsed;
+  const coverRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    if (coverRef.current?.complete) {
+      setCoverFetched(true);
+    }
+    // Show the shimmer skeleton for a minimum time
+    const timer = setTimeout(() => setMinSkeletonElapsed(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   const accolades = [
     {
       description: "2020 Winners of Western Washington University's Battle of the Bands",
@@ -79,12 +95,31 @@ function Biography({ showAccolades }: IBiographyProps) {
           overflow: 'hidden',
           justifyContent: 'center',
         }}
+        aria-busy={!coverLoaded}
       >
-        <img
+        <AnimatePresence>
+          {!coverLoaded && (
+            <ShimmerSkeleton
+              key="cover-skeleton"
+              style={{
+                position: 'absolute',
+                width: '90%',
+                height: '100%',
+              }}
+            />
+          )}
+        </AnimatePresence>
+        <m.img
+          ref={coverRef}
           width="90%"
           style={{
             position: 'absolute',
           }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: coverLoaded ? 1 : 0 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          onLoad={() => setCoverFetched(true)}
+          onError={() => setCoverFetched(true)}
           src="https://d19uxx92abk94f.cloudfront.net/band-photos/cover-2025-05-26.webp"
           alt="cover"
         />
