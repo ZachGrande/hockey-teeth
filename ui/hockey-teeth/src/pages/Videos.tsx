@@ -1,98 +1,54 @@
 import React from 'react';
+import { Box, Typography } from '@mui/material';
+import { cardSx } from '../theme/tokens';
+import LiteYouTube from '../components/LiteYouTube';
+import Reveal from '../components/Reveal';
+
+const videos = [
+  { title: 'Why Do We Fret? (Official Music Video)', id: 'kFuGYzCTbsU' },
+  { title: 'On/Off & The Seasons - Live at Capitol Hill Block Party', id: 'HtoBx0r1PLI' },
+  { title: 'Big Red (Live on Art Zone)', id: 'kbU2WG9gzSs' },
+  { title: 'Food for Thought', id: 'oM4hGOilvFk' },
+  { title: 'Big Red (Live at The Sunset Tavern)', id: 'JcHOBLHW9HY' },
+  { title: 'Tired Of Being Tough', id: '0ip_Mz7b0NM' },
+  { title: 'Big Red (Live)', id: 'Uw29IU4BR-s' },
+  { title: 'Roll Up', id: 'FnDCfOJUN0g' },
+  { title: 'Sick Of Me', id: 'c-3rrAArNFU' },
+  { title: 'KSPU Session', id: 'tUz4Hmn6lAI' },
+  { title: 'Freshwater Session', id: 'FVeE-bCO3XQ' },
+  { title: 'Isolation', id: '8kFYLvi7u0o' },
+  { title: 'Go There', id: 'BlcXgZdIpms' },
+  { title: 'Behind The Scenes', id: 'VxBGSGYzP8Y' },
+  { title: 'Pocket Concerts', id: 'i3d9LylY_cc' },
+];
 
 function Videos() {
-  const videos = [
-    {
-      title: 'Why Do We Fret? (Official Music Video)',
-      link: 'https://www.youtube.com/embed/kFuGYzCTbsU',
-    },
-    {
-      title: 'On/Off & The Seasons - Live at Capitol Hill Block Party',
-      link: 'https://www.youtube.com/embed/HtoBx0r1PLI',
-    },
-    {
-      title: 'Big Red (Live on Art Zone)',
-      link: 'https://www.youtube.com/embed/kbU2WG9gzSs',
-    },
-    {
-      title: 'Food for Thought',
-      link: 'https://www.youtube.com/embed/oM4hGOilvFk',
-    },
-    {
-      title: 'Big Red (Live at The Sunset Tavern)',
-      link: 'https://www.youtube.com/embed/JcHOBLHW9HY',
-    },
-    {
-      title: 'Tired Of Being Tough',
-      link: 'https://www.youtube.com/embed/0ip_Mz7b0NM',
-    },
-    {
-      title: 'Big Red (Live)',
-      link: 'https://www.youtube.com/embed/Uw29IU4BR-s',
-    },
-    {
-      title: 'Roll Up',
-      link: 'https://www.youtube.com/embed/FnDCfOJUN0g',
-    },
-    {
-      title: 'Sick Of Me',
-      link: 'https://www.youtube.com/embed/c-3rrAArNFU',
-    },
-    {
-      title: 'KSPU Session',
-      link: 'https://www.youtube.com/embed/tUz4Hmn6lAI',
-    },
-    {
-      title: 'Freshwater Session',
-      link: 'https://www.youtube.com/embed/FVeE-bCO3XQ',
-    },
-    {
-      title: 'Isolation',
-      link: 'https://www.youtube.com/embed/8kFYLvi7u0o',
-    },
-    {
-      title: 'Go There',
-      link: 'https://www.youtube.com/embed/BlcXgZdIpms',
-    },
-    {
-      title: 'Behind The Scenes',
-      link: 'https://www.youtube.com/embed/VxBGSGYzP8Y',
-    },
-    {
-      title: 'Pocket Concerts',
-      link: 'https://www.youtube.com/embed/i3d9LylY_cc',
-    },
-  ];
-
   return (
-    <>
-      {videos.map((data) => (
-        <div
-          key={data.title}
-          style={{
-            position: 'relative',
-            display: 'flex',
-            paddingBottom: '56.25%',
-            height: 0,
-            overflow: 'hidden',
-            justifyContent: 'center',
-          }}
-        >
-          <iframe
-            width="90%"
-            height="90%"
-            title={data.title}
-            src={data.link}
-            style={{
-              position: 'absolute',
-            }}
-            // eslint-disable-next-line @stylistic/max-len
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        </div>
+    <Box
+      component="ul"
+      sx={{
+        display: 'grid',
+        gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' },
+        gap: 6,
+        listStyle: 'none',
+        p: 0,
+        mt: 3,
+        mb: 12,
+      }}
+    >
+      {videos.map((video) => (
+        <li key={video.id}>
+          <Reveal>
+            <Box sx={{ ...cardSx, p: 2 }}>
+              <LiteYouTube videoId={video.id} title={video.title} />
+              <Typography variant="cardTitle" component="h2" sx={{ px: 2, pt: 3, pb: 2 }}>
+                {video.title}
+              </Typography>
+            </Box>
+          </Reveal>
+        </li>
       ))}
-    </>
+    </Box>
   );
 }
 

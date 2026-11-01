@@ -4,13 +4,21 @@ import {
 import { app } from '../firebase';
 import { ShowType } from './Shows.types';
 
-const database = getDatabase(app);
-const showsRef = ref(database, 'shows');
+// Dev-only switch (`npm run dev:mock`). `import.meta.env.DEV` is false in production builds,
+// so the mock module is never bundled or used there.
+const useMockShows = import.meta.env.DEV && import.meta.env.VITE_MOCK_SHOWS === 'true';
+
+const getShowsRef = () => ref(getDatabase(app), 'shows');
 
 let showsPromise: Promise<ShowType[]> | null = null;
 
 async function loadShows(): Promise<ShowType[]> {
-  const snapshot = await get(showsRef);
+  if (useMockShows) {
+    const { loadMockShows } = await import('./mocks/showsMock');
+    return loadMockShows();
+  }
+
+  const snapshot = await get(getShowsRef());
   const value: Record<string, Partial<ShowType>> = snapshot.val() ?? {};
   return Object.values(value).map((show) => ({
     date: show.date ?? '',
@@ -37,6 +45,12 @@ export async function addShow(show: ShowType): Promise<void> {
     location: show.location.trim(),
     link: show.link.trim(),
   };
-  await push(showsRef, newShow);
+
+  if (useMockShows) {
+    const { addMockShow } = await import('./mocks/showsMock');
+    await addMockShow(newShow);
+  } else {
+    await push(getShowsRef(), newShow);
+  }
   showsPromise = null;
 }

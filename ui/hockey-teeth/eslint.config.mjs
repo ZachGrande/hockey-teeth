@@ -33,6 +33,8 @@ export default defineConfig([
     rules: {
       'no-console': ['error', { allow: ['warn', 'error'] }],
       'no-warning-comments': ['error', { terms: ['todo'], location: 'start' }],
+      // React 19 ignores defaultProps on function components; use default arguments instead.
+      'react/require-default-props': ['error', { functions: 'defaultArguments' }],
     },
   },
 

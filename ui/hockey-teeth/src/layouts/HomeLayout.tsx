@@ -1,44 +1,17 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import {
-  Container, Box, AppBar, Toolbar,
-} from '@mui/material';
-import logo from '../assets/logo.svg';
+import { Container } from '@mui/material';
 import Footer from '../components/Footer';
-import MenuBar from '../components/MenuBar';
+import SiteHeader from '../components/SiteHeader';
 
 function HomeLayout() {
   return (
     <div className="App">
-      <AppBar
-        position="static"
-        color="transparent"
-        elevation={0}
-        sx={{ bgcolor: 'transparent' }}
-      >
-        <Toolbar
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <Box
-            component="img"
-            src={logo}
-            alt="logo"
-            sx={{
-              height: '150px',
-              width: '375px',
-              pointerEvents: 'none',
-            }}
-          />
-        </Toolbar>
-      </AppBar>
-      <Container maxWidth="md">
-        <MenuBar />
+      <SiteHeader />
+      <Container maxWidth="md" component="main" sx={{ px: { xs: 4, sm: 6 } }}>
         <Outlet />
+      </Container>
+      <Container maxWidth="md" sx={{ px: { xs: 4, sm: 6 } }}>
         <Footer />
       </Container>
     </div>

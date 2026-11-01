@@ -1,14 +1,51 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   Box, ImageList, ImageListItem, Link, List, Typography,
 } from '@mui/material';
+import { AnimatePresence, m } from 'motion/react';
 import biography from '../data/Biography';
+import ShimmerSkeleton from '../components/ShimmerSkeleton';
+
+const CDN_BASE_URL = 'https://d19uxx92abk94f.cloudfront.net';
+const BAND_PHOTOS_URL = `${CDN_BASE_URL}/band-photos`;
+const COVER_IMAGE_URL = `${BAND_PHOTOS_URL}/cover-2025-05-26.webp`;
+
+interface IBiographyPhoto {
+  file: string;
+  cols: 1 | 2;
+}
+
+const photos: IBiographyPhoto[] = [
+  { file: 'band-01-2025-05-26.webp', cols: 2 },
+  { file: 'band-02.webp', cols: 1 },
+  { file: 'band-03.webp', cols: 2 },
+  { file: 'band-04.webp', cols: 1 },
+  { file: 'band-05-2025-05-26.webp', cols: 1 },
+  { file: 'band-06-2025-05-26.webp', cols: 2 },
+];
+
+// Height / width of a single-column cell; sets the row height responsively.
+const PORTRAIT_ASPECT_RATIO = '2 / 3';
 
 interface IBiographyProps {
   showAccolades: boolean;
 }
 
 function Biography({ showAccolades }: IBiographyProps) {
+  const [coverFetched, setCoverFetched] = useState(false);
+  const [minSkeletonElapsed, setMinSkeletonElapsed] = useState(false);
+  const coverLoaded = coverFetched && minSkeletonElapsed;
+  const coverRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    if (coverRef.current?.complete) {
+      setCoverFetched(true);
+    }
+    // Show the shimmer skeleton for a minimum time
+    const timer = setTimeout(() => setMinSkeletonElapsed(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   const accolades = [
     {
       description: "2020 Winners of Western Washington University's Battle of the Bands",
@@ -21,47 +58,6 @@ function Biography({ showAccolades }: IBiographyProps) {
     },
     {
       description: 'Over 10,000 total streams for our latest release, Sick Of Me',
-    },
-  ];
-
-  const images = [
-    {
-      title: 'Photo 1',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-01-2025-05-26.webp',
-      cols: 2,
-      rows: 1,
-    },
-    {
-      title: 'Photo 2',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-02.webp',
-      cols: 2,
-      rows: 2,
-      height: '345px',
-    },
-    {
-      title: 'Photo 3',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-03.webp',
-      cols: 2,
-      rows: 2,
-    },
-    {
-      title: 'Photo 4',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-04.webp',
-      cols: 1,
-      rows: 2,
-    },
-    {
-      title: 'Photo 5',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-05-2025-05-26.webp',
-      cols: 1,
-      rows: 2,
-      height: '339px',
-    },
-    {
-      title: 'Photo 6',
-      image: 'https://d19uxx92abk94f.cloudfront.net/band-photos/band-06-2025-05-26.webp',
-      cols: 2,
-      rows: 1,
     },
   ];
 
@@ -79,13 +75,32 @@ function Biography({ showAccolades }: IBiographyProps) {
           overflow: 'hidden',
           justifyContent: 'center',
         }}
+        aria-busy={!coverLoaded}
       >
-        <img
+        <AnimatePresence>
+          {!coverLoaded && (
+            <ShimmerSkeleton
+              key="cover-skeleton"
+              style={{
+                position: 'absolute',
+                width: '90%',
+                height: '100%',
+              }}
+            />
+          )}
+        </AnimatePresence>
+        <m.img
+          ref={coverRef}
           width="90%"
           style={{
             position: 'absolute',
           }}
-          src="https://d19uxx92abk94f.cloudfront.net/band-photos/cover-2025-05-26.webp"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: coverLoaded ? 1 : 0 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          onLoad={() => setCoverFetched(true)}
+          onError={() => setCoverFetched(true)}
+          src={COVER_IMAGE_URL}
           alt="cover"
         />
       </Box>
@@ -100,23 +115,32 @@ function Biography({ showAccolades }: IBiographyProps) {
       <ImageList
         sx={{
           margin: 5,
+          overflow: 'hidden',
         }}
-        variant="masonry"
+        variant="quilted"
+        rowHeight="auto"
         cols={3}
         gap={8}
       >
-        {images.map((item) => (
+        {photos.map((item, index) => (
           <ImageListItem
-            key={item.image}
-            cols={item.cols || 1}
-            rows={item.rows || 1}
+            key={item.file}
+            cols={item.cols}
+            sx={{
+              position: 'relative',
+              aspectRatio: item.cols === 1 ? PORTRAIT_ASPECT_RATIO : undefined,
+            }}
           >
             <img
-              src={item.image}
-              alt={item.title}
+              src={`${BAND_PHOTOS_URL}/${item.file}`}
+              alt={`Hockey Teeth ${index + 1}`}
               loading="lazy"
               style={{
-                height: item.height || 'auto',
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
               }}
             />
           </ImageListItem>

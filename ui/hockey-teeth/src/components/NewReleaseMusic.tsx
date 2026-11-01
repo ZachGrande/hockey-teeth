@@ -1,9 +1,11 @@
 import React from 'react';
-import {
-  Card, CardContent, Typography, Button, Box, Container, useTheme,
-} from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import { cardSx } from '../theme/tokens';
+import PillLink from './PillLink';
+import Reveal from './Reveal';
+import SectionTitle from './SectionTitle';
 
-export interface INewReleaseVideoProps {
+export interface INewReleaseMusicProps {
   album: {
     songName: string;
     releaseDate?: string;
@@ -12,67 +14,59 @@ export interface INewReleaseVideoProps {
   };
 }
 
-function NewReleaseVideo({ album }: INewReleaseVideoProps) {
-  const theme = useTheme();
+function NewReleaseMusic({ album }: INewReleaseMusicProps) {
+  const isPresave = Boolean(album.releaseDate);
 
   return (
-    <Container
-      maxWidth="xs"
-      disableGutters={false}
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        mt: 10,
-        mb: 5,
-      }}
+    <Box
+      component="section"
+      aria-labelledby="release-title"
+      sx={{ maxWidth: 400, mx: 'auto', mb: 12 }}
     >
-      <Card
-        sx={{
-          borderRadius: '15px',
-          overflow: 'visible',
-          width: '75%',
-          mb: '25px',
-          backgroundColor: '#F3F3F3',
-          boxShadow: 3,
-        }}
-      >
-        <Box
-          component="img"
-          sx={{
-            height: 'auto',
-            width: '75%',
-            position: 'relative',
-            top: '-25px',
-            mb: '-25px',
-            borderRadius: '5px',
-          }}
-          title={album.songName}
-          src={album.coverURL}
-          alt="cover"
-        />
-        <CardContent sx={{ mt: 1, mb: 2 }}>
-          <Typography variant="h3" component="div" sx={{ mb: 1 }}>
+      <SectionTitle id="release-title" eyebrow={isPresave ? 'Coming soon' : 'Out now'}>
+        New Release
+      </SectionTitle>
+      <Reveal>
+        <Box sx={{ ...cardSx, p: 4 }}>
+          <Box
+            component="img"
+            src={album.coverURL}
+            alt={`${album.songName} cover art`}
+            loading="lazy"
+            width={600}
+            height={600}
+            sx={{
+              display: 'block',
+              width: '100%',
+              height: 'auto',
+              aspectRatio: '1 / 1',
+              objectFit: 'cover',
+              borderRadius: '10px',
+            }}
+          />
+          <Typography variant="cardTitle" sx={{ mt: 4 }}>
             {album.songName}
           </Typography>
-          <Typography variant="h5" color={theme.palette.text.secondary}>
-            {album.releaseDate}
-          </Typography>
-          <Button
-            variant="contained"
-            href={album.link}
-            target="_blank"
-            rel="noreferrer"
-            sx={{ mt: 2 }}
-          >
-            <Typography variant="h6">
-              {album.releaseDate ? 'PRESAVE' : 'OUT NOW'}
+          {album.releaseDate && (
+            <Typography variant="meta" sx={{ mt: 1 }}>
+              {album.releaseDate}
             </Typography>
-          </Button>
-        </CardContent>
-      </Card>
-    </Container>
+          )}
+          <Box sx={{ mt: 4 }}>
+            <PillLink
+              tone="pink"
+              block
+              href={album.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {isPresave ? 'Presave' : 'Listen now'}
+            </PillLink>
+          </Box>
+        </Box>
+      </Reveal>
+    </Box>
   );
 }
 
-export default NewReleaseVideo;
+export default NewReleaseMusic;

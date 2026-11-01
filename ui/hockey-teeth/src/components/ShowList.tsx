@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, Typography } from '@mui/material';
-import { ShowType } from '../data/Shows.types';
+import { Show } from '../data/useShows';
 
 interface IShowListProps {
-  shows: ShowType[];
+  shows: Show[];
   includeLink: boolean;
 }
 
@@ -39,11 +39,11 @@ function ShowList({ shows, includeLink }: IShowListProps) {
   return (
     <div>
       {shows.map(({
-        location, link, date, venue,
+        location, link, date, displayDate, venue,
       }) => (
-        <div key={date}>
+        <div key={`${date}-${venue}`}>
           <div className="show-item">
-            <Typography variant="h4">{`${date} | ${venue}`}</Typography>
+            <Typography variant="h4">{`${displayDate} | ${venue}`}</Typography>
             <Typography variant="body1">
               {renderTicketInfo(location, link)}
             </Typography>
